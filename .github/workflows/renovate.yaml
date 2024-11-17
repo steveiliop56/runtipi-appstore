@@ -16,4 +16,4 @@ jobs:
         run: bun install -g renovate
 
       - name: Run renovate
-        run: renoave --token ${{ secrets.GITHUB_TOKEN }} steveiliop56/runtipi-appstore
+        run: renovate --token ${{ secrets.GITHUB_TOKEN }} steveiliop56/runtipi-appstore
