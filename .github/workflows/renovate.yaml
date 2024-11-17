@@ -9,12 +9,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Self-hosted Renovate
-        uses: renovatebot/github-action@v41.0.2
-        with:
-          configurationFile: renovate-global.json
-          docker-cmd-file: .github/scripts/renovate-entrypoint.sh
-          docker-user: root
-          token: ${{ secrets.GITHUB_TOKEN }}
-          docker-volumes: |
-            /home/runner/work/runtipi-appstore/runtipi-appstore:/home/runner/work/runtipi-appstore/runtipi-appstore
+      - name: Install bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: Install renovate
+        run: bun install -g renovate
+
+      - name: Run renovate
+        run: renoave --token ${{ secrets.GITHUB_TOKEN }} steveiliop56/runtipi-appstore
