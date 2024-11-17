@@ -1,0 +1,20 @@
+{
+  "name": "Adguard",
+  "id": "adguard",
+  "available": true,
+  "short_desc": "Network-wide ads & trackers blocking DNS server.",
+  "author": "AdguardTeam",
+  "port": 8001,
+  "categories": ["network"],
+  "description": "Free and open source, powerful network-wide ads & trackers blocking DNS server.",
+  "tipi_version": 1,
+  "version": "v0.107.54",
+  "source": "https://github.com/AdguardTeam/AdGuardHome",
+  "website": "https://adguard.com",
+  "exposable": true,
+  "supported_architectures": ["arm64", "amd64"],
+  "dynamic_config": true,
+  "form_fields": [],
+  "created_at": 1731868365802,
+  "updated_at": 1731868365802
+}

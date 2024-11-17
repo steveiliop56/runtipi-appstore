@@ -1,0 +1,28 @@
+{
+  "services": [
+    {
+      "name": "adguard",
+      "image": "adguard/adguardhome:v0.107.54",
+      "internalPort": 80,
+      "isMain": true,
+      "volumes": [
+        {
+          "containerPath": "/opt/adguardhome/work",
+          "hostPath": "${APP_DATA_DIR}/data/work"
+        },
+        {
+          "containerPath": "/opt/adguardhome/conf",
+          "hostPath": "${APP_DATA_DIR}/data/conf"
+        }
+      ],
+      "addPorts": [
+        {
+          "containerPort": 53,
+          "hostPort": 53,
+          "tcp": true,
+          "udp": true
+        }
+      ]
+    }
+  ]
+}
