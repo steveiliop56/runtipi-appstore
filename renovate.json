@@ -20,5 +20,12 @@
       "matchDepTypes": ["devDependencies"],
       "automerge": true
     }
-  ]
+  ],
+  "postUpgradeTasks": {
+    "commands": [
+      "bun .github/scripts/update-config.ts {{packageFile}} {{newVersion}}"
+    ],
+    "fileFilters": ["**/*"],
+    "executionMode": "update"
+  }
 }

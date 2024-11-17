@@ -1,0 +1,5 @@
+{
+  "allowPostUpgradeCommandTemplating": [
+    "^bun .github/scripts/update-config.ts$"
+  ]
+}

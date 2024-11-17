@@ -1,6 +1,7 @@
 name: Renovate
 on:
   workflow_dispatch:
+  issues:
 
 jobs:
   renovate:
