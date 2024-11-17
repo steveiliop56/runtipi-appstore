@@ -7,7 +7,7 @@
     {
       "customType": "regex",
       "fileMatch": ["^.*docker-compose\\.json$"],
-      "matchStrings": ["\"image\": \"(?<currentValue>.*?)\","],
+      "matchStrings": ["\"image\": \"(?<depName>.*?):(?<currentValue>.*?)\","],
       "datasourceTemplate": "docker"
     }
   ],
