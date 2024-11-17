@@ -19,3 +19,5 @@ jobs:
           docker-cmd-file: .github/renovate-entrypoint.sh
           docker-user: root
           token: ${{ secrets.GITHUB_TOKEN }}
+          docker-volumes: |
+            /home/runner/work/runtipi-appstore/runtipi-appstore:/home/runner/work/runtipi-appstore/runtipi-appstore
