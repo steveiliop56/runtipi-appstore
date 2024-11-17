@@ -6,7 +6,7 @@
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": ["^docker-compose.json$"],
+      "fileMatch": ["^.*docker-compose\\.json$"],
       "matchStrings": ["\"image\": \"(?<currentValue>.*?)\","],
       "depNameTemplate": "docker-compose-json",
       "datasourceTemplate": "docker"
