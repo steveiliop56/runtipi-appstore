@@ -12,7 +12,7 @@ on:
           - WARN
           - ERROR
           - FATAL
-  issues:
+  # issues:
 
 jobs:
   renovate:
