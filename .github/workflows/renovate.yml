@@ -32,5 +32,8 @@ jobs:
       - name: Install Renovate
         run: bun install -g renovate
 
+      - name: Echo repository
+        run: echo ${{ github.repository }}
+
       - name: Run renovate
-        run: LOG_LEVEL=${{ github.event.inputs.log_level || 'INFO' }} renovate --token ${{ secrets.GITHUB_TOKEN }} steveiliop56/runtipi-appstore
+        run: LOG_LEVEL=${{ github.event.inputs.log_level || 'INFO' }} renovate --token ${{ secrets.GITHUB_TOKEN }} ${{ github.repository }}
