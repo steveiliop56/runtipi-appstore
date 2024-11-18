@@ -6,8 +6,10 @@
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": ["^.*docker-compose\\.json$"],
-      "matchStrings": ["\"image\": \"(?<depName>.*?):(?<currentValue>.*?)\","],
+      "fileMatch": ["/^.*docker-compose\\.json$/"],
+      "matchStrings": [
+        "/\"image\": \"(?<depName>.*?):(?<currentValue>.*?)\",/"
+      ],
       "datasourceTemplate": "docker"
     }
   ],
@@ -19,6 +21,14 @@
     {
       "matchDepTypes": ["devDependencies"],
       "automerge": true
+    },
+    {
+      "matchPackageNames": ["/immich{-,}**/"],
+      "automerge": false
+    },
+    {
+      "matchPackageNames": ["/(mariadb|mysql|mongodb|mongo|postgres|redis)/"],
+      "enabled": false
     }
   ],
   "postUpgradeTasks": {
