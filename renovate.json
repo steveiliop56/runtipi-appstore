@@ -3,6 +3,7 @@
   "extends": ["config:recommended"],
   "addLabels": ["renovate"],
   "automergeStrategy": "rebase",
+  "ignoreTests": true,
   "customManagers": [
     {
       "customType": "regex",
