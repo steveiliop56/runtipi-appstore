@@ -1,3 +1,3 @@
 module.exports = {
-  allowPostUpgradeCommandTemplating: ["^bun .github/scripts/update-config.ts$"],
+  allowedPostUpgradeCommands: ["^bun .github/scripts/update-config.ts$"],
 };
