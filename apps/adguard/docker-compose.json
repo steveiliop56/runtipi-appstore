@@ -2,7 +2,7 @@
   "services": [
     {
       "name": "adguard",
-      "image": "adguard/adguardhome:v0.107.53",
+      "image": "adguard/adguardhome:v0.107.54",
       "internalPort": 80,
       "isMain": true,
       "volumes": [
