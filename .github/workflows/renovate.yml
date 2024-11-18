@@ -1,6 +1,17 @@
 name: Renovate
 on:
   workflow_dispatch:
+    inputs:
+      log_level:
+        type: choice
+        description: Log level
+        default: INFO
+        options:
+          - DEBUG
+          - INFO
+          - WARN
+          - ERROR
+          - FATAL
   issues:
 
 jobs:
@@ -22,4 +33,4 @@ jobs:
         run: bun install -g renovate
 
       - name: Run renovate
-        run: renovate --token ${{ secrets.GITHUB_TOKEN }} steveiliop56/runtipi-appstore
+        run: LOG_LEVEL=${{ github.event.inputs.log_level || 'INFO' }} renovate --token ${{ secrets.GITHUB_TOKEN }} steveiliop56/runtipi-appstore
