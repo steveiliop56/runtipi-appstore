@@ -9,8 +9,8 @@
     "network"
   ],
   "description": "Free and open source, powerful network-wide ads & trackers blocking DNS server.",
-  "tipi_version": 2,
-  "version": "v0.107.54",
+  "tipi_version": 3,
+  "version": "v0.107.55",
   "source": "https://github.com/AdguardTeam/AdGuardHome",
   "website": "https://adguard.com",
   "exposable": true,
@@ -21,5 +21,5 @@
   "dynamic_config": true,
   "form_fields": [],
   "created_at": 1731868365802,
-  "updated_at": 1731937290541
+  "updated_at": 1736801901964
 }
