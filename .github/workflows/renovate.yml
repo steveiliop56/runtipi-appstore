@@ -12,7 +12,8 @@ on:
           - WARN
           - ERROR
           - FATAL
-  # issues:
+  schedule:
+    - cron: 0 2 * * *
 
 jobs:
   renovate:
