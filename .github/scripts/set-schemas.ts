@@ -50,7 +50,7 @@ const main = async () => {
         appDynamicCompose.$schema = dynamicComposeSchemaPath;
         await promises.writeFile(
           appDynamicComposePath,
-          JSON.stringify(appDynamicCompose, null, 2),
+          JSON.stringify(appDynamicCompose, null, 4),
         );
         console.log(`Set dynamic compose schema for ${app}`);
       } catch (e) {
