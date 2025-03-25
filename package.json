@@ -1,5 +1,9 @@
 {
-  "dependencies": { "@types/node": "^22.9.0" },
+  "dependencies": {
+    "@types/node": "^22.9.0",
+    "zod": "^3.24.2",
+    "zod-to-json-schema": "^3.24.5"
+  },
   "devDependencies": {
     "prettier": "3.5.3"
   }
