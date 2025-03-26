@@ -38,7 +38,11 @@
     },
     {
       "matchPackageNames": [
-        "(mariadb|mysql|mongodb|mongo|postgres|redis)"
+        "mariadb",
+        "mysql",
+        "monogdb",
+        "postgres",
+        "redis"
       ],
       "enabled": false
     }
