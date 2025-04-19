@@ -22,6 +22,9 @@
             ],
             "healthCheck": {
                 "test": "curl -k https://127.0.0.1:9000/health || exit 1"
+            },
+            "extraLabels": {
+                "traefik.http.services.{{ RUNTIPI_APP_ID }}.loadbalancer.server.scheme": "https"
             }
         }
     ]
