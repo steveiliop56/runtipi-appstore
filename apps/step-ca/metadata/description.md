@@ -16,8 +16,6 @@ You can use `step-ca` to:
   - It comes with a [Go wrapper](./examples#user-content-basic-client-usage)
   - ... and there's a [command-line client](https://github.com/smallstep/cli) you can use in scripts!
 
----
-
 ### Comparison with Smallstep's commercial product
 
 `step-ca` is optimized for a two-tier PKI serving common DevOps use cases.
