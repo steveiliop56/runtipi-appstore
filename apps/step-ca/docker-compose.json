@@ -10,7 +10,6 @@
                 "DOCKER_STEPCA_INIT_NAME": "${STEPCA_CA_NAME:-Smallstep}",
                 "DOCKER_STEPCA_INIT_DNS_NAMES": "${STEPCA_DNS_NAMES}",
                 "DOCKER_STEPCA_INIT_REMOTE_MANAGEMENT": "true",
-                "DOCKER_STEPCA_INIT_PROVISIONER_NAME": "${STEPCA_PROVISIONER_NAME:-admin}",
                 "DOCKER_STEPCA_INIT_SSH": "true",
                 "DOCKER_STEPCA_INIT_ACME": "true"
             },
