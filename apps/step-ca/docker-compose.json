@@ -1,0 +1,25 @@
+{
+    "$schema": "../dynamic-compose-schema.json",
+    "services": [
+        {
+            "name": "step-ca",
+            "image": "smallstep/step-ca:0.28.3",
+            "internalPort": 9000,
+            "isMain": true,
+            "environment": {
+                "DOCKER_STEPCA_INIT_NAME": "${STEP_CA_CA_NAME:-Smallstep}",
+                "DOCKER_STEPCA_INIT_DNS_NAMES": "${STEP_CA_DNS_NAMES}",
+                "DOCKER_STEPCA_INIT_REMOTE_MANAGEMEsNT": "true",
+                "DOCKER_STEPCA_INIT_PROVISIONER_NAME": "${STEP_CA_PROVISIONER_NAME:-admin}",
+                "DOCKER_STEPCA_INIT_SSH": "true",
+                "DOCKER_STEPCA_INIT_ACME": "true"
+            },
+            "volumes": [
+                {
+                    "hostPath": "${APP_DATA_DIR}/data",
+                    "containerPath": "/home/step"
+                }
+            ]
+        }
+    ]
+}

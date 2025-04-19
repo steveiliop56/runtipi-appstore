@@ -1,0 +1,52 @@
+{
+    "name": "Step CA",
+    "id": "step-ca",
+    "available": true,
+    "short_desc": "A private certificate authority.",
+    "author": "smallstep",
+    "port": 8583,
+    "categories": [
+        "security",
+        "utilities"
+    ],
+    "description": "A private certificate authority (X.509 & SSH) & ACME server for secure automated certificate management, so you can use TLS everywhere & SSO for SSH.",
+    "tipi_version": 1,
+    "version": "0.28.3",
+    "source": "https://github.com/smallstep/certificates",
+    "website": "https://smallstep.com/certificates",
+    "exposable": true,
+    "supported_architectures": [
+        "arm64",
+        "amd64"
+    ],
+    "created_at": 1745069206161,
+    "updated_at": 1745069206161,
+    "dynamic_config": true,
+    "form_fields": [
+        {
+            "type": "text",
+            "label": "CA name",
+            "hint": "The name of the CA to be created.",
+            "required": false,
+            "placeholder": "Smallstep",
+            "env_variable": "STEP_CA_CA_NAME"
+        },
+        {
+            "type": "text",
+            "label": "DNS names",
+            "hint": "Comma-separated list of DNS names for the CA.",
+            "required": true,
+            "placeholder": "ca.example.com",
+            "env_variable": "STEP_CA_DNS_NAMES"
+        },
+        {
+            "type": "text",
+            "label": "Provisioner name",
+            "hint": "The name of the provisioner to be created.",
+            "required": false,
+            "placeholder": "admin",
+            "env_variable": "STEP_CA_PROVISIONER_NAME"
+        }
+    ],
+    "$schema": "../app-info-schema.json"
+}
