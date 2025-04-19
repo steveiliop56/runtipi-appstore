@@ -19,7 +19,10 @@
                     "hostPath": "${APP_DATA_DIR}/data",
                     "containerPath": "/home/step"
                 }
-            ]
+            ],
+            "healthCheck": {
+                "test": "curl -k https://127.0.0.1:9000/health || exit 1"
+            }
         }
     ]
 }
