@@ -10,17 +10,17 @@
         "utilities"
     ],
     "description": "A private certificate authority (X.509 & SSH) & ACME server for secure automated certificate management, so you can use TLS everywhere & SSO for SSH.",
-    "tipi_version": 6,
+    "tipi_version": 7,
     "version": "0.28.3",
     "source": "https://github.com/smallstep/certificates",
     "website": "https://smallstep.com/certificates",
-    "exposable": true,
+    "exposable": false,
     "supported_architectures": [
         "arm64",
         "amd64"
     ],
     "created_at": 1745069206161,
-    "updated_at": 1745075069343,
+    "updated_at": 1745075543602,
     "dynamic_config": true,
     "form_fields": [
         {
