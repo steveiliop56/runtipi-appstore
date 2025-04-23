@@ -1,0 +1,60 @@
+{
+    "$schema": "../dynamic-compose-schema.json",
+    "services": [
+        {
+            "name": "gitea",
+            "image": "docker.gitea.com/gitea:1.23.7",
+            "internalPort": 3000,
+            "isMain": true,
+            "environment": {
+                "USER_UID": "1000",
+                "USER_GID": "1000",
+                "GITEA__database__DB_TYPE": "postgres",
+                "GITEA__database__HOST": "gitea-db:5432",
+                "GITEA__database__NAME": "gitea",
+                "GITEA__database__USER": "gitea",
+                "GITEA__database__PASSWD": "${GITEA_DB_PASSWORD}"
+            },
+            "volumes": [
+                {
+                    "hostPath": "${APP_DATA_DIR}/data/gitea",
+                    "containerPath": "/data"
+                },
+                {
+                    "hostPath": "/etc/localtime",
+                    "containerPath": "/etc/localtime",
+                    "readOnly": true
+                },
+                {
+                    "hostPath": "/etc/timezone",
+                    "containerPath": "/etc/timezone",
+                    "readOnly": true
+                }
+            ],
+            "addPorts": [
+                {
+                    "containerPort": 22,
+                    "hostPort": 2222
+                }
+            ],
+            "dependsOn": [
+                "gitea-db"
+            ]
+        },
+        {
+            "name": "gitea-db",
+            "image": "postgres:14",
+            "environment": {
+                "POSTGRES_USER": "gitea",
+                "POSTGRES_PASSWORD": "${GITEA_DB_PASSWORD}",
+                "POSTGRES_DB": "gitea"
+            },
+            "volumes": [
+                {
+                    "hostPath": "${APP_DATA_DIR}/data/db",
+                    "containerPath": "/var/lib/postgresql/data"
+                }
+            ]
+        }
+    ]
+}

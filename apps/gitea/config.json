@@ -1,0 +1,33 @@
+{
+    "name": "Gitea",
+    "id": "gitea",
+    "available": true,
+    "short_desc": "Git with a cup of tea!",
+    "author": "go-gitea",
+    "port": 8283,
+    "categories": [
+        "development"
+    ],
+    "description": "Painless self-hosted all-in-one software development service, including Git hosting, code review, team collaboration, package registry and CI/CD.",
+    "tipi_version": 1,
+    "version": "1.23.7",
+    "source": "https://github.com/go-gitea/gitea",
+    "website": "https://gitea.com",
+    "exposable": true,
+    "supported_architectures": [
+        "arm64",
+        "amd64"
+    ],
+    "created_at": 1745409407675,
+    "updated_at": 1745409407675,
+    "dynamic_config": true,
+    "form_fields": [
+        {
+            "type": "random",
+            "label": "Gitea database password",
+            "min": 32,
+            "env_variable": "GITEA_DB_PASSWORD"
+        }
+    ],
+    "$schema": "../app-info-schema.json"
+}
