@@ -28,4 +28,9 @@ const updateAppConfig = async (packageFile: string, newVersion: string) => {
   }
 };
 
+if (!packageFile || !newVersion) {
+  console.error("Usage: bun update-config.js <packageFile> <newVersion>");
+  process.exit(1);
+}
+
 updateAppConfig(packageFile, newVersion);
