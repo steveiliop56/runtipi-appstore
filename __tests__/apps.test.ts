@@ -4,8 +4,16 @@ import { fromError } from 'zod-validation-error';
 import fs from 'node:fs'
 import path from 'node:path'
 
+const ignoreFiles = [
+  "app-info-schema.json",
+  "docker-compose.common.yml",
+  "dynamic-compose-schema.json",
+];
+
 const getApps = async () => {
-  const appsDir = await fs.promises.readdir(path.join(process.cwd(), 'apps'))
+  const appsDir = (await fs.promises.readdir(path.join(process.cwd(), 'apps'))).filter(
+    (app) => !ignoreFiles.includes(app),
+  );
   return appsDir
 };
 
