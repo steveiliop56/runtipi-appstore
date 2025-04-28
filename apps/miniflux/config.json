@@ -1,0 +1,47 @@
+{
+    "name": "Miniflux",
+    "id": "miniflux",
+    "available": true,
+    "short_desc": "Minimalist and opinionated feed reader.",
+    "author": "miniflux",
+    "port": 8392,
+    "categories": [
+        "social"
+    ],
+    "description": "Miniflux is a minimalist and opinionated feed reader. It's simple, fast, lightweight and super easy to install.",
+    "tipi_version": 1,
+    "version": "2.2.8",
+    "source": "https://github.com/miniflux/v2",
+    "website": "https://miniflux.app",
+    "exposable": true,
+    "supported_architectures": [
+        "arm64",
+        "amd64"
+    ],
+    "created_at": 1745850652498,
+    "updated_at": 1745850652498,
+    "dynamic_config": true,
+    "form_fields": [
+        {
+            "type": "random",
+            "label": "Miniflux DB Password",
+            "min": 32,
+            "env_variable": "MINIFLUX_DB_PASSWORD"
+        },
+        {
+            "type": "text",
+            "label": "Miniflux Admin Username",
+            "placeholder": "admin",
+            "required": true,
+            "env_variable": "MINIFLUX_ADMIN_USERNAME"
+        },
+        {
+            "type": "password",
+            "label": "Miniflux Admin Password",
+            "placeholder": "password",
+            "required": true,
+            "env_variable": "MINIFLUX_ADMIN_PASSWORD"
+        }
+    ],
+    "$schema": "../app-info-schema.json"
+}

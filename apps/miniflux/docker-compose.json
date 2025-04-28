@@ -1,0 +1,41 @@
+{
+    "$schema": "../dynamic-compose-schema.json",
+    "services": [
+        {
+            "name": "miniflux",
+            "image": "ghcr.io/miniflux/miniflux:2.2.8",
+            "internalPort": 8080,
+            "isMain": true,
+            "environment": {
+                "DATABASE_URL": "postgres://miniflux:${MINIFLUX_DB_PASSWORD}@miniflux-db/miniflux?sslmode=disable",
+                "RUN_MIGRATIONS": "1",
+                "CREATE_ADMIN": "1",
+                "ADMIN_USERNAME": "${MINIFLUX_ADMIN_USERNAME}",
+                "ADMIN_PASSWORD": "${MINIFLUX_ADMIN_PASSWORD}"
+            },
+            "dependsOn": [
+                "miniflux-db"
+            ]
+        },
+        {
+            "name": "miniflux-db",
+            "image": "postgres:17-alpine",
+            "volumes": [
+                {
+                    "hostPath": "${APP_DATA_DIR}/data/db",
+                    "containerPath": "/var/lib/postgresql/data"
+                }
+            ],
+            "environment": {
+                "POSTGRES_USER": "miniflux",
+                "POSTGRES_PASSWORD": "${MINIFLUX_DB_PASSWORD}",
+                "POSTGRES_DB": "miniflux"
+            },
+            "healthCheck": {
+                "test": "pg_isready -U miniflux",
+                "interval": "10s",
+                "startPeriod": "30s"
+            }
+        }
+    ]
+}
