@@ -8,7 +8,7 @@
       "network"
     ],
     "description": "VPN client in a thin Docker container for multiple VPN providers, written in Go, and using OpenVPN or Wireguard, DNS over TLS, with a few proxy servers built-in.",
-    "tipi_version": 1,
+    "tipi_version": 2,
     "version": "v3.40.0",
     "source": "https://github.com/qdm12/gluetun",
     "exposable": false,
@@ -45,7 +45,7 @@
             "label": "Gluetun Server Cities",
             "placeholder": "Amsterdam",
             "required": true,
-            "env_variable": "GLUETUN_WIREGUARD_ADDRESSES"
+            "env_variable": "GLUETUN_SERVER_CITIES"
         }
     ],
     "$schema": "../app-info-schema.json"
