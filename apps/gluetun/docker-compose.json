@@ -1,0 +1,27 @@
+{
+    "$schema": "../dynamic-compose-schema.json",
+    "services": [
+        {
+            "name": "gluetun",
+            "image": "qmcgaw/gluetun:v3.40.0",
+            "isMain": true,
+            "capAdd": ["NET_ADMIN"],
+            "devices": [
+                "/dev/net/tun"
+            ],
+            "volumes": [
+                {
+                    "hostPath": "${APP_DATA_DIR}/data",
+                    "containerPath": "/gluetun"
+                }
+            ],
+            "environment": {
+                "VPN_SERVICE_PROVIDER": "${GLUETUN_VPN_PROVIDER}",
+                "VPN_TYPE": "wireguard",
+                "WIREGUARD_PRIVATE_KEY": "${GLUETUN_WIREGUARD_PRIVATE_KEY}",
+                "WIREGUARD_ADDRESSES": "${GLUETUN_WIREGUARD_ADDRESSES}",
+                "SERVER_CITIES": "${GLUETUN_SERVER_CITIES}"
+            }
+        }
+    ]
+}
