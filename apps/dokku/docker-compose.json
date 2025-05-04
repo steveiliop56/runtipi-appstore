@@ -4,7 +4,7 @@
         {
             "name": "dokku",
             "image": "dokku/dokku:0.35.18",
-            "internalPort": 8080,
+            "internalPort": 80,
             "isMain": true,
             "environment": {
                 "DOKKU_HOSTNAME": "${DOKKU_HOSTNAME}",
