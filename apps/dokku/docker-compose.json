@@ -1,0 +1,33 @@
+{
+    "$schema": "../dynamic-compose-schema.json",
+    "services": [
+        {
+            "name": "dokku",
+            "image": "dokku/dokku:0.35.18",
+            "internalPort": 8080,
+            "isMain": true,
+            "environment": {
+                "DOKKU_HOSTNAME": "${DOKKU_HOSTNAME}",
+                "DOKKU_HOST_ROOT": "/data/images",
+                "DOKKU_LIB_HOST_ROOT": "/data/app"
+            },
+            "volumes": [
+                {
+                    "hostPath": "${APP_DATA_DIR}/data",
+                    "containerPath": "/data"
+                },
+                {
+                    "hostPath": "/var/run/docker.sock",
+                    "containerPath": "/var/run/docker.sock"
+                }
+            ],
+            "addPorts": [
+                {
+                    "hostPort": 3022,
+                    "containerPort": 3022,
+                    "tcp": true
+                }
+            ]
+        }
+    ]
+}
