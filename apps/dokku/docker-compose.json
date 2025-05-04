@@ -8,13 +8,13 @@
             "isMain": true,
             "environment": {
                 "DOKKU_HOSTNAME": "${DOKKU_HOSTNAME}",
-                "DOKKU_HOST_ROOT": "/data/images",
-                "DOKKU_LIB_HOST_ROOT": "/data/app"
+                "DOKKU_HOST_ROOT": "${APP_DATA_DIR}/data/home/dokku",
+                "DOKKU_LIB_HOST_ROOT": "${APP_DATA_DIR}/data/var/lib/dokku"
             },
             "volumes": [
                 {
                     "hostPath": "${APP_DATA_DIR}/data",
-                    "containerPath": "/data"
+                    "containerPath": "/mnt/dokku"
                 },
                 {
                     "hostPath": "/var/run/docker.sock",

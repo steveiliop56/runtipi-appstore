@@ -9,7 +9,7 @@
         "development"
     ],
     "description": "A docker-powered PaaS that helps you build and manage the lifecycle of applications.",
-    "tipi_version": 2,
+    "tipi_version": 3,
     "version": "0.35.18",
     "source": "https://github.com/dokku/dokku",
     "website": "https://dokku.com",
@@ -20,7 +20,7 @@
         "amd64"
     ],
     "created_at": 1746381213728,
-    "updated_at": 1746381213728,
+    "updated_at": 1746381918785,
     "dynamic_config": true,
     "form_fields": [
         {
