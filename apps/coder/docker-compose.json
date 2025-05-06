@@ -17,7 +17,7 @@
                 }
             ],
             "environment": {
-                "CODER_PG_CONNECTION_URL": "postgresql://coder:${CODER_DB_PASSWORD}@database/coder?sslmode=disable",
+                "CODER_PG_CONNECTION_URL": "postgresql://coder:${CODER_DB_PASSWORD}@coder-db/coder?sslmode=disable",
                 "CODER_HTTP_ADDRESS": "0.0.0.0:7080",
                 "CODER_ACCESS_URL": "${CODER_ACCESS_URL}"
             },
