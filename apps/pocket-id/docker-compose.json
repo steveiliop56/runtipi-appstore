@@ -4,7 +4,7 @@
         {
             "name": "pocket-id",
             "image": "ghcr.io/pocket-id/pocket-id:v0.52.0",
-            "internalPort": 3000,
+            "internalPort": 80,
             "isMain": true,
             "volumes": [
                 {
