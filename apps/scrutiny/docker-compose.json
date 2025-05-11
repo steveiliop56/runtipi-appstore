@@ -1,0 +1,29 @@
+{
+    "$schema": "../dynamic-compose-schema.json",
+    "services": [
+        {
+            "name": "scrutiny",
+            "image": "ghcr.io/analogj/scrutiny:v0.8.1-omnibus",
+            "internalPort": 8080,
+            "isMain": true,
+            "capAdd": [
+                "SYS_RAWIO"
+            ],
+            "volumes": [
+                {
+                    "hostPath": "/run/udev",
+                    "containerPath": "/run/udev",
+                    "readOnly": true
+                },
+                {
+                    "hostPath": "${APP_DATA_DIR}/data/config",
+                    "containerPath": "/opt/scrutiny/config"
+                },
+                {
+                    "hostPath": "${APP_DATA_DIR}/data/influxdb",
+                    "containerPath": "/opt/scrutiny/influxdb"
+                }
+            ]
+        }
+    ]
+}
