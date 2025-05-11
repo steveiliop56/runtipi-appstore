@@ -8,7 +8,7 @@ WebUI for smartd S.M.A.R.T monitoring
 
 ## Adding devices
 
-In order to add drvies to scrutiny for monitoring you will need to create the `runtipi/user-config/steveiliop56/scrutiny/docker-compose.yml` file with the following content:
+In order to add drives to scrutiny for monitoring you will need to create the `runtipi/user-config/steveiliop56/scrutiny/docker-compose.yml` file with the following content:
 
 ```yaml
 services:
