@@ -14,7 +14,7 @@ In order to add drvies to scrutiny for monitoring you will need to create the `r
 services:
   scrutiny:
     devices:
-      - /dev/sdX:/dev/sdX
+      - /dev/sdX
 ```
 
 ## Introduction
