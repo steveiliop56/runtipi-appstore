@@ -1,0 +1,54 @@
+{
+    "name": "Nextcloud",
+    "id": "nextcloud",
+    "available": true,
+    "short_desc": "A safe home for all your data.",
+    "author": "nextcloud",
+    "port": 8301,
+    "categories": [
+        "data"
+    ],
+    "description": "Nextcloud is a suite of client-server software for creating and using file hosting services.",
+    "tipi_version": 1,
+    "version": "31.0.4",
+    "source": "https://github.com/nextcloud/server",
+    "website": "https://nextcloud.com",
+    "exposable": true,
+    "supported_architectures": [
+        "arm64",
+        "amd64"
+    ],
+    "created_at": 1746979653120,
+    "updated_at": 1746979653120,
+    "dynamic_config": true,
+    "form_fields": [
+        {
+            "type": "random",
+            "label": "Nextcloud Database Password",
+            "min": 32,
+            "env_variable": "NEXTCLOUD_DB_PASSWORD"
+        },
+        {
+            "type": "text",
+            "label": "Nextcloud Admin User",
+            "placeholder": "admin",
+            "required": true,
+            "env_variable": "NEXTCLOUD_ADMIN_USER"
+        },
+        {
+            "type": "password",
+            "label": "Nextcloud Admin Password",
+            "placeholder": "password",
+            "required": true,
+            "env_variable": "NEXTCLOUD_ADMIN_PASSWORD"
+        },
+        {
+            "type": "text",
+            "label": "Nextcloud Trusted Domains",
+            "placeholder": "example.com",
+            "required": true,
+            "env_variable": "NEXTCLOUD_TRUSTED_DOMAINS"
+        }
+    ],
+    "$schema": "../app-info-schema.json"
+}
