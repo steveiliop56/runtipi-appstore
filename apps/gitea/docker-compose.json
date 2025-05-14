@@ -3,7 +3,7 @@
     "services": [
         {
             "name": "gitea",
-            "image": "docker.gitea.com/gitea:1.23.7",
+            "image": "docker.gitea.com/gitea:1.23.8",
             "internalPort": 3000,
             "isMain": true,
             "environment": {
