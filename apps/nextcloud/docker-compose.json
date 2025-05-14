@@ -24,7 +24,7 @@
         },
         {
             "name": "nextcloud-db",
-            "image": "postgres:17",
+            "image": "postgres:17-alpine",
             "volumes": [
                 {
                     "hostPath": "${APP_DATA_DIR}/data/db",
