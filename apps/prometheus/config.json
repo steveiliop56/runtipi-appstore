@@ -18,8 +18,8 @@
         "arm64",
         "amd64"
     ],
-    "created_at": 1745082405284,
-    "updated_at": 1745082405284,
+    "created_at": 1747399590441,
+    "updated_at": 1747399590441,
     "dynamic_config": true,
     "form_fields": [],
     "$schema": "../app-info-schema.json"
