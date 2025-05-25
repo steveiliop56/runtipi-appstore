@@ -1,40 +1,40 @@
 {
-    "name": "Coder",
-    "id": "coder",
-    "available": true,
-    "short_desc": "Remote development environments.",
-    "author": "coder",
-    "port": 8095,
-    "categories": [
-        "development"
-    ],
-    "description": "Coder enables organizations to set up development environments in their public or private cloud infrastructure.",
-    "tipi_version": 2,
-    "version": "v2.21.3",
-    "source": "https://github.com/coder/coder",
-    "website": "https://coder.com",
-    "exposable": true,
-    "supported_architectures": [
-        "arm64",
-        "amd64"
-    ],
-    "created_at": 1746477403489,
-    "updated_at": 1746535874617,
-    "dynamic_config": true,
-    "form_fields": [
-        {
-            "type": "url",
-            "label": "Coder Access URL",
-            "required": true,
-            "placeholder": "https://coder.example.com",
-            "env_variable": "CODER_ACCESS_URL"
-        },
-        {
-            "type": "random",
-            "label": "Coder Database Password",
-            "min": 32,
-            "env_variable": "CODER_DB_PASSWORD"
-        }
-    ],
-    "$schema": "../app-info-schema.json"
+  "name": "Coder",
+  "id": "coder",
+  "available": true,
+  "short_desc": "Remote development environments.",
+  "author": "coder",
+  "port": 8095,
+  "categories": [
+    "development"
+  ],
+  "description": "Coder enables organizations to set up development environments in their public or private cloud infrastructure.",
+  "tipi_version": 3,
+  "version": "v2.22.1",
+  "source": "https://github.com/coder/coder",
+  "website": "https://coder.com",
+  "exposable": true,
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1746477403489,
+  "updated_at": 1747794801931,
+  "dynamic_config": true,
+  "form_fields": [
+    {
+      "type": "url",
+      "label": "Coder Access URL",
+      "required": true,
+      "placeholder": "https://coder.example.com",
+      "env_variable": "CODER_ACCESS_URL"
+    },
+    {
+      "type": "random",
+      "label": "Coder Database Password",
+      "min": 32,
+      "env_variable": "CODER_DB_PASSWORD"
+    }
+  ],
+  "$schema": "../app-info-schema.json"
 }
