@@ -17,7 +17,7 @@
             },
             "volumes": [
                 {
-                    "hostPath": "${APP_DATA_DIR}/data/dockflare",
+                    "hostPath": "${APP_DATA_DIR}/data",
                     "containerPath": "/app/data"
                 },
                 {
