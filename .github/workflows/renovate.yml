@@ -28,11 +28,20 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+      - name: Cache bun dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.bun/install/cache
+          key: ${{ runner.os }}-bun-${{ hashFiles('**/bun.lockb') }}
+          restore-keys: |
+            ${{ runner.os }}-bun-
+
+      - name: Setup node
+        uses: actions/setup-node@v4
         with:
           node-version: 22
 
-      - name: Install bun
+      - name: Setup bun
         uses: oven-sh/setup-bun@v2
 
       - name: Install Renovate
