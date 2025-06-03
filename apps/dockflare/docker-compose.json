@@ -1,0 +1,31 @@
+{
+    "$schema": "../dynamic-compose-schema.json",
+    "services": [
+        {
+            "name": "dockflare",
+            "image": "alplat/dockflare:v1.8.5",
+            "internalPort": 5000,
+            "isMain": true,
+            "environment": {
+                "STATE_FILE_PATH": "/app/data/state.json",
+                "TZ": "${TZ}",
+                "CF_API_TOKEN": "${DOCKFLARE_CF_API_TOKEN}",
+                "CF_ACCOUNT_ID": "${DOCKFLARE_CF_ACCOUNT_ID}",
+                "CF_ZONE_ID": "${DOCKFLARE_CF_ZONE_ID}",
+                "TUNNEL_NAME": "${DOCKFLARE_TUNNEL_NAME}",
+                "CLOUDFLARED_NETWORK_NAME": "runtipi_tipi_main_network"
+            },
+            "volumes": [
+                {
+                    "hostPath": "${DATA_DIR}/dockflare",
+                    "containerPath": "/app/data"
+                },
+                {
+                    "hostPath": "/var/run/docker.sock",
+                    "containerPath": "/var/run/docker.sock",
+                    "readOnly": true
+                }
+            ]
+        }
+    ]
+}

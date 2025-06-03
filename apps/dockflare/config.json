@@ -1,0 +1,55 @@
+{
+  "name": "Dockflare",
+  "id": "dockflare",
+  "available": true,
+  "short_desc": "Cloudflare Tunnel & Zero Trust manager.",
+  "author": "ChrispyBacon-dev",
+  "port": 8926,
+  "categories": [
+    "network",
+    "utilities"
+  ],
+  "description": "DockFlare simplifies Cloudflare Tunnel and Zero Trust Access policy management by using Docker labels for automated configuration, while also providing a powerful web UI for manual service definitions and policy overrides.",
+  "tipi_version": 1,
+  "version": "v1.8.5",
+  "source": "https://github.com/ChrispyBacon-dev/DockFlare",
+  "exposable": true,
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1748951010245,
+  "updated_at": 1748951010245,
+  "dynamic_config": true,
+  "form_fields": [
+    {
+        "type": "password",
+        "label": "Cloudflare API Token",
+        "required": true,
+        "placeholder": "some_cloudflare_api_token",
+        "env_variable": "DOCKFLARE_CF_API_TOKEN"
+    },
+    {
+        "type": "text",
+        "label": "Cloudflare Account ID",
+        "required": true,
+        "placeholder": "some_cloudflare_account_id",
+        "env_variable": "DOCKFLARE_CF_ACCOUNT_ID"
+    },
+    {
+        "type": "text",
+        "label": "Cloudflare Zone ID",
+        "required": true,
+        "placeholder": "some_cloudflare_zone_id",
+        "env_variable": "DOCKFLARE_CF_ZONE_ID"
+    },
+    {
+        "type": "text",
+        "label": "Tunnel Name",
+        "required": true,
+        "placeholder": "dockflare_tunnel",
+        "env_variable": "DOCKFLARE_TUNNEL_NAME"
+    }
+  ],
+  "$schema": "../app-info-schema.json"
+}
