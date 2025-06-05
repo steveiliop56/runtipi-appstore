@@ -1,0 +1,28 @@
+{
+  "name": "Filestash",
+  "id": "filestash",
+  "available": true,
+  "short_desc": "Enterprise file management software.",
+  "author": "mickael-kerjean",
+  "port": 8926,
+  "categories": [
+    "data",
+    "utilities"
+  ],
+  "description": "A file manager / web client for SFTP, S3, FTP, WebDAV, Git, Minio, LDAP, CalDAV, CardDAV, Mysql, Backblaze, ...",
+  "tipi_version": 1,
+  "version": "latest",
+  "source": "https://github.com/mickael-kerjean/filestash",
+  "website": "https://www.filestash.app",
+  "exposable": true,
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1749136270160,
+  "updated_at": 1749136270160,
+  "dynamic_config": true,
+  "form_fields": [],
+  "$schema": "../app-info-schema.json",
+  "force_pull": true
+}
