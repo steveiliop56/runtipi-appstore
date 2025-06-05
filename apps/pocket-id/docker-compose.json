@@ -3,17 +3,17 @@
     "services": [
         {
             "name": "pocket-id",
-            "image": "ghcr.io/pocket-id/pocket-id:v0.53.0",
-            "internalPort": 80,
+            "image": "ghcr.io/pocket-id/pocket-id:v1.2.0",
+            "internalPort": 1411,
             "isMain": true,
             "volumes": [
                 {
                     "hostPath": "${APP_DATA_DIR}/data",
-                    "containerPath": "/app/backend/data"
+                    "containerPath": "/app/data"
                 }
             ],
             "environment": {
-                "PUBLIC_APP_URL": "${POCKET_ID_APP_URL}",
+                "APP_URL": "${POCKET_ID_APP_URL}",
                 "TRUST_PROXY": "true",
                 "PUID": "1000",
                 "PGID": "1000"
