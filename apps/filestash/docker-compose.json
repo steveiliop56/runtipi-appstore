@@ -1,33 +1,33 @@
 {
-    "$schema": "../dynamic-compose-schema.json",
-    "services": [
+  "$schema": "../dynamic-compose-schema.json",
+  "services": [
+    {
+      "name": "filestash",
+      "image": "machines/filestash:latest",
+      "internalPort": 8334,
+      "isMain": true,
+      "user": "0:0",
+      "volumes": [
         {
-            "name": "filestash",
-            "image": "machines/filestash:latest",
-            "internalPort": 8334,
-            "isMain": true,
-            "user": "0:0",
-            "volumes": [
-                {
-                    "hostPath": "${APP_DATA_DIR}/data",
-                    "containerPath": "/app/data/state/"
-                },
-                {
-                    "hostPath": "${ROOT_FOLDER_HOST}",
-                    "containerPath": "/runtipi"
-                }
-            ],
-            "overrides": [
-                {
-                "architecture": "arm64",
-                "services": [
-                    {
-                    "name": "filestash",
-                    "image": "machines/filestash:latest-arm64v8"
-                    }
-                ]
-                }
-            ]
+          "hostPath": "${APP_DATA_DIR}/data",
+          "containerPath": "/app/data/state/"
+        },
+        {
+          "hostPath": "${ROOT_FOLDER_HOST}",
+          "containerPath": "/runtipi"
         }
-    ]
+      ]
+    }
+  ],
+  "overrides": [
+    {
+      "architecture": "arm64",
+      "services": [
+        {
+          "name": "filestash",
+          "image": "machines/filestash:latest-arm64v8"
+        }
+      ]
+    }
+  ]
 }
