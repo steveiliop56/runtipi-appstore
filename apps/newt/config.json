@@ -1,0 +1,45 @@
+{
+  "name": "Newt",
+  "id": "newt",
+  "available": true,
+  "short_desc": "A tunneling client for Pangolin.",
+  "author": "fosrl",
+  "categories": [
+    "network"
+  ],
+  "description": "Newt is a fully user space WireGuard tunnel client and TCP/UDP proxy, designed to securely expose private resources controlled by Pangolin. By using Newt, you don't need to manage complex WireGuard tunnels and NATing.",
+  "tipi_version": 1,
+  "version": "1.2.1",
+  "source": "https://github.com/fosrl/newt",
+  "website": "https://docs.fossorial.io",
+  "exposable": false,
+  "no_gui": true,
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1749849033973,
+  "updated_at": 1749849033973,
+  "dynamic_config": true,
+  "form_fields": [
+    {
+        "type": "url",
+        "label": "Pangolin Endpoint",
+        "required": true,
+        "env_variable": "PANGOLIN_ENDPOINT"
+    },
+    {
+        "type": "text",
+        "label": "Newt ID",
+        "required": true,
+        "env_variable": "NEWT_ID"
+    },
+    {
+        "type": "password",
+        "label": "Newt Secret",
+        "required": true,
+        "env_variable": "NEWT_SECRET"
+    }
+  ],
+  "$schema": "../app-info-schema.json"
+}
