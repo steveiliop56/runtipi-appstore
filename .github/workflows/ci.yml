@@ -25,6 +25,14 @@ jobs:
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
 
+      - name: Cache bun dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.bun/install/cache
+          key: ${{ runner.os }}-bun-ci
+          restore-keys: |
+            ${{ runner.os }}-bun-ci
+
       - name: Install dependencies
         run: bun install
 
