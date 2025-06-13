@@ -41,13 +41,13 @@ jobs:
       - name: Cache bun dependencies
         uses: actions/cache@v4
         with:
-          path: ~/.bun/install/cache
+          path: ~/.bun/install/global
           key: ${{ runner.os }}-bun-renovate
           restore-keys: |
             ${{ runner.os }}-bun-renovate
 
       - name: Install Renovate
-        run: bun install -g renovate re2
+        run: bun install -g renovate@40 re2
 
       - name: Echo repository
         run: echo ${{ github.repository }}
