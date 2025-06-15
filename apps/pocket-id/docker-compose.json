@@ -19,7 +19,7 @@
                 "PGID": "1000"
             },
             "healthCheck": {
-                "test": "curl -f http://localhost/healthz",
+                "test": "curl -f http://localhost:1411/healthz",
                 "interval": "1m30s",
                 "timeout": "5s",
                 "retries": 2,
