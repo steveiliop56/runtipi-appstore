@@ -1,48 +1,27 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:recommended"
-  ],
-  "addLabels": [
-    "renovate"
-  ],
+  "extends": ["config:recommended"],
+  "addLabels": ["renovate"],
   "automergeStrategy": "rebase",
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": [
-        "^.*docker-compose\\.json$"
-      ],
-      "matchStrings": [
-        "\"image\": \"(?<depName>.*?):(?<currentValue>.*?)\","
-      ],
+      "managerFilePatterns": ["/^.*docker-compose\\.json$/"],
+      "matchStrings": ["\"image\": \"(?<depName>.*?):(?<currentValue>.*?)\","],
       "datasourceTemplate": "docker"
     }
   ],
   "packageRules": [
     {
-      "matchUpdateTypes": [
-        "minor",
-        "patch",
-        "pin",
-        "digest"
-      ],
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "automerge": true
     },
     {
-      "matchDepTypes": [
-        "devDependencies"
-      ],
+      "matchDepTypes": ["devDependencies"],
       "automerge": true
     },
     {
-      "matchPackageNames": [
-        "mariadb",
-        "mysql",
-        "monogdb",
-        "postgres",
-        "redis"
-      ],
+      "matchPackageNames": ["mariadb", "mysql", "monogdb", "postgres", "redis"],
       "enabled": false
     }
   ],
@@ -50,9 +29,7 @@
     "commands": [
       "bun .github/scripts/update-config.ts {{packageFile}} {{newVersion}}"
     ],
-    "fileFilters": [
-      "**/*"
-    ],
+    "fileFilters": ["**/*"],
     "executionMode": "update"
   }
 }
