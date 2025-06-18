@@ -19,11 +19,17 @@
 
 After installing the app you should run:
 
-```shellscript
+```bash
 docker exec -it ocis_steveiliop56-ocis-1 ocis init --force-overwrite --insecure yes
 ```
 
-After running the command restart the app and you should be good to go.
+Then remove the old data:
+
+```bash
+rm -rf runtipi/app-data/steveiliop56/ocis/data/ocis
+```
+
+Finally restart the app and you should be good to go.
 
 ## Introduction
 
