@@ -20,7 +20,7 @@
 After installing the app you should run:
 
 ```shellscript
-docker exec -it ocis_steveiliop56-ocis-1 init --force-overwrite --insecure yes
+docker exec -it ocis_steveiliop56-ocis-1 ocis init --force-overwrite --insecure yes
 ```
 
 After running the command restart the app and you should be good to go.
