@@ -23,7 +23,7 @@
   "dynamic_config": true,
   "form_fields": [
     {
-        "type": "fqdn",
+        "type": "url",
         "label": "ownCloud URL",
         "required": true,
         "env_variable": "OCIS_URL"
