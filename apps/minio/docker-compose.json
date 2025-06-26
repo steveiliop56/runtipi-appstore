@@ -21,7 +21,7 @@
                     "containerPath": "/mnt/data"
                 },
                 {
-                    "hostPath": "${APP_DATA_DIR}/config/minio.env",
+                    "hostPath": "${APP_DATA_DIR}/data/config/minio.env",
                     "containerPath": "/etc/config.env"
                 }
             ],
