@@ -33,11 +33,11 @@
             "extraLabels": {
                 "traefik.http.middlewares.{{RUNTIPI_APP_ID}}-s3-web-redirect.redirectscheme.scheme": "https",
                 "traefik.http.services.{{RUNTIPI_APP_ID}}-s3.loadbalancer.server.port": "9000",
-                "traefik.http.routers.{{RUNTIPI_APP_ID}}-s3-insecure.rule": "Host(`${APP_DOMAIN}`)",
+                "traefik.http.routers.{{RUNTIPI_APP_ID}}-s3-insecure.rule": "Host(`{{RUNTIPI_APP_ID}}-s3.${DOMAIN}`)",
                 "traefik.http.routers.{{RUNTIPI_APP_ID}}-s3-insecure.entrypoints": "web",
                 "traefik.http.routers.{{RUNTIPI_APP_ID}}-s3-insecure.service": "{{RUNTIPI_APP_ID}}",
                 "traefik.http.routers.{{RUNTIPI_APP_ID}}-s3-insecure.middlewares": "{{RUNTIPI_APP_ID}}-s3-web-redirect",
-                "traefik.http.routers.{{RUNTIPI_APP_ID}}-s3.rule": "Host(`${APP_DOMAIN}`)",
+                "traefik.http.routers.{{RUNTIPI_APP_ID}}-s3.rule": "Host(`{{RUNTIPI_APP_ID}}-s3.${DOMAIN}`)",
                 "traefik.http.routers.{{RUNTIPI_APP_ID}}-s3.entrypoints": "websecure",
                 "traefik.http.routers.{{RUNTIPI_APP_ID}}-s3.service": "{{RUNTIPI_APP_ID}}",
                 "traefik.http.routers.{{RUNTIPI_APP_ID}}-s3.tls.certresolver": "myresolver",
