@@ -6,7 +6,8 @@
   "author": "minio",
   "port": 8922,
   "categories": [
-    "utilities"
+    "data",
+    "development"
   ],
   "description": "MinIO is a high-performance, S3-compatible object storage solution released under the GNU AGPL v3.0 license.",
   "tipi_version": 1,
@@ -19,7 +20,7 @@
     "amd64"
   ],
   "created_at": 1750969832202,
-  "updated_at": 1750969832202,
+  "updated_at": 1750970142171,
   "dynamic_config": true,
   "form_fields": [
     {
