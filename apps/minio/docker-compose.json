@@ -3,7 +3,7 @@
     "services": [
         {
             "name": "minio",
-            "image": "minio/minio:RELEASE.2025-06-13T11-33-47Z",
+            "image": "minio/minio:RELEASE.2025-04-22T22-12-26Z",
             "isMain": true,
             "internalPort": 9001,
             "addPorts": [

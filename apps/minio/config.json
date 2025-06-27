@@ -10,8 +10,8 @@
     "development"
   ],
   "description": "MinIO is a high-performance, S3-compatible object storage solution released under the GNU AGPL v3.0 license.",
-  "tipi_version": 4,
-  "version": "RELEASE.2025-06-13T11-33-47Z",
+  "tipi_version": 5,
+  "version": "RELEASE.2025-04-22T22-12-26Z",
   "source": "https://github.com/minio/minio",
   "website": "https://min.io",
   "exposable": true,
@@ -20,7 +20,7 @@
     "amd64"
   ],
   "created_at": 1750969832202,
-  "updated_at": 1751011639886,
+  "updated_at": 1751012077882,
   "dynamic_config": true,
   "form_fields": [
     {
