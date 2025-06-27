@@ -9,8 +9,8 @@
     "utilities"
   ],
   "description": "Prometheus, a Cloud Native Computing Foundation project, is a systems and service monitoring system. It collects metrics from configured targets at given intervals, evaluates rule expressions, displays the results, and can trigger alerts when specified conditions are observed.",
-  "tipi_version": 3,
-  "version": "v3.4.1",
+  "tipi_version": 4,
+  "version": "v3.4.2",
   "source": "https://github.com/prometheus/prometheus",
   "website": "https://prometheus.io",
   "exposable": true,
@@ -19,7 +19,7 @@
     "amd64"
   ],
   "created_at": 1747399590441,
-  "updated_at": 1749004449139,
+  "updated_at": 1750991801827,
   "dynamic_config": true,
   "form_fields": [],
   "$schema": "../app-info-schema.json"
