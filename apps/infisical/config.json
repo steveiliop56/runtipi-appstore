@@ -1,0 +1,51 @@
+{
+  "name": "Infisical",
+  "id": "infisical",
+  "available": true,
+  "short_desc": "Open source platform for secrets management.",
+  "author": "Infisical",
+  "port": 8395,
+  "categories": [
+    "security"
+  ],
+  "description": "Infisical is the open source secret management platform that teams use to centralize their application configuration and secrets like API keys and database credentials as well as manage their internal PKI.",
+  "tipi_version": 1,
+  "version": "v0.134.0-postgres",
+  "source": "https://github.com/Infisical/infisical",
+  "website": "https://infisical.com",
+  "exposable": true,
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1751054059554,
+  "updated_at": 1751054059554,
+  "dynamic_config": true,
+  "form_fields": [
+    {
+        "type": "random",
+        "label": "Infisical Encryption Key",
+        "min": 32,
+        "env_variable": "INFISICAL_ENCRYPTION_KEY"
+    },
+    {
+        "type": "random",
+        "label": "Infisical Auth Secret",
+        "min": 32,
+        "env_variable": "INFISICAL_AUTH_SECRET"
+    },
+    {
+        "type": "random",
+        "label": "Infisical Database Password",
+        "min": 32,
+        "env_variable": "INFISICAL_DB_PASSWORD"
+    },
+    {
+        "type": "url",
+        "label": "Infisical Site URL",
+        "required": true,
+        "env_variable": "INFISICAL_SITE_URL"
+    }
+  ],
+  "$schema": "../app-info-schema.json"
+}
