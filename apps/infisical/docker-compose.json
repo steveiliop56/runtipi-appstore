@@ -13,7 +13,7 @@
                 "POSTGRES_PASSWORD": "${INFISICAL_DB_PASSWORD}",
                 "POSTGRES_USER": "infisical",
                 "POSTGRES_DB": "infisical",
-                "DB_CONNECTION_URI": "postgres://infisical:${INFISICAL_DB_PASSWORD}@db:5432/infisical",
+                "DB_CONNECTION_URI": "postgres://infisical:${INFISICAL_DB_PASSWORD}@infisical-db:5432/infisical",
                 "REDIS_URL": "redis://infisical-redis:6379",
                 "SITE_URL": "${INFISICAL_SITE_URL}"
             },
