@@ -1,0 +1,52 @@
+{
+  "name": "LLDAP",
+  "id": "lldap",
+  "available": true,
+  "short_desc": "Light LDAP implementation.",
+  "author": "lldap",
+  "port": 17170,
+  "categories": [
+    "security",
+    "utilities"
+  ],
+  "description": "Light LDAP is a lightweight authentication server that provides an opinionated, simplified LDAP interface for authentication.",
+  "tipi_version": 1,
+  "version": "2025-05-19",
+  "source": "https://github.com/lldap/lldap",
+  "exposable": true,
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1751646145700,
+  "updated_at": 1751646145700,
+  "dynamic_config": true,
+  "form_fields": [
+    {
+        "type": "random",
+        "label": "LLDAP JWT Secret",
+        "min": 32,
+        "env_variable": "LLDAP_JWT_SECRET"
+    },
+    {
+        "type": "random",
+        "label": "LLDAP Key Seed",
+        "min": 32,
+        "env_variable": "LLDAP_KEY_SEED"
+    },
+    {
+        "type": "text",
+        "label": "LLDAP LDAP Base DN",
+        "required": true,
+        "placeholder": "dc=example,dc=com",
+        "env_variable": "LLDAP_LDAP_BASE_DN"
+    },
+    {
+        "type": "password",
+        "label": "LLDAP LDAP User Password",
+        "required": true,
+        "env_variable": "LLDAP_LDAP_USER_PASS"
+    }
+  ],
+  "$schema": "../app-info-schema.json"
+}

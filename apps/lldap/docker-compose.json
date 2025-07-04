@@ -1,0 +1,32 @@
+{
+    "$schema": "../dynamic-compose-schema.json",
+    "services": [
+        {
+            "name": "lldap",
+            "image": "lldap/lldap:2025-05-19",
+            "internalPort": 17170,
+            "isMain": true,
+            "environment": {
+                "UID": "1000",
+                "GID": "1000",
+                "TZ": "${TZ}",
+                "LLDAP_JWT_SECRET": "${LLDAP_JWT_SECRET}",
+                "LLDAP_KEY_SEED": "${LLDAP_KEY_SEED}",
+                "LLDAP_LDAP_BASE_DN": "${LLDAP_LDAP_BASE_DN}",
+                "LLDAP_LDAP_USER_PASS": "${LLDAP_LDAP_USER_PASS}"
+            },
+            "volumes": [
+                {
+                    "hostPath": "${APP_DATA_DIR}/data",
+                    "containerPath": "/data"
+                }
+            ],
+            "addPorts": [
+                {
+                    "containerPort": 3890,
+                    "hostPort": 3890
+                }
+            ]
+        }
+    ]
+}
