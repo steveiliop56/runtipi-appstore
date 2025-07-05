@@ -21,9 +21,9 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ~/.bun/install/cache
-          key: ${{ runner.os }}-bun-ci
+          key: ${{ runner.os }}-bun-ci-${{ hashFiles('bun.lockb') }}
           restore-keys: |
-            ${{ runner.os }}-bun-ci
+            ${{ runner.os }}-bun-ci-
 
       - name: Install dependencies
         run: bun install
