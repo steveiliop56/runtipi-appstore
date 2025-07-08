@@ -3,7 +3,7 @@
     "services": [
         {
             "name": "infisical",
-            "image": "infisical/infisical:v0.135.0-postgres",
+            "image": "infisical/infisical:v0.136.1-postgres",
             "internalPort": 8080,
             "isMain": true,
             "environment": {
