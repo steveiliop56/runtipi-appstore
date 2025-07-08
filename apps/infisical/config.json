@@ -9,8 +9,8 @@
     "security"
   ],
   "description": "Infisical is the open source secret management platform that teams use to centralize their application configuration and secrets like API keys and database credentials as well as manage their internal PKI.",
-  "tipi_version": 2,
-  "version": "v0.135.0",
+  "tipi_version": 3,
+  "version": "v0.136.1",
   "source": "https://github.com/Infisical/infisical",
   "website": "https://infisical.com",
   "exposable": true,
@@ -19,7 +19,7 @@
     "amd64"
   ],
   "created_at": 1751054059554,
-  "updated_at": 1751769685202,
+  "updated_at": 1751942147353,
   "dynamic_config": true,
   "form_fields": [
     {
