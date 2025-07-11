@@ -12,7 +12,7 @@
                 "POSTGRES_URL": "postgresql://kan:${KAN_DB_PASSWORD}@kan-db:5432/kan-db?sslmode=disable"
             },
             "dependsOn": {
-                "postgres": {
+                "kan-db": {
                     "condition": "service_started"
                 }
             }
