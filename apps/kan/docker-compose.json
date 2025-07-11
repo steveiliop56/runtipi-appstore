@@ -9,7 +9,8 @@
             "environment": {
                 "NEXT_PUBLIC_BASE_URL": "${KAN_NEXT_PUBLIC_BASE_URL}",
                 "BETTER_AUTH_SECRET": "${KAN_BETTER_AUTH_SECRET}",
-                "POSTGRES_URL": "postgresql://kan:${KAN_DB_PASSWORD}@kan-db:5432/kan-db?sslmode=disable"
+                "POSTGRES_URL": "postgresql://kan:${KAN_DB_PASSWORD}@kan-db:5432/kan-db?sslmode=disable",
+                "NEXT_PUBLIC_ALLOW_CREDENTIALS": "true"
             },
             "dependsOn": {
                 "kan-db": {
