@@ -3,7 +3,7 @@
     "services": [
         {
             "name": "ocis",
-            "image": "owncloud/ocis:7.1.3",
+            "image": "owncloud/ocis:7.2.0",
             "isMain": true,
             "internalPort": 9200,
             "environment": {
