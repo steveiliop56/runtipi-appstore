@@ -9,8 +9,8 @@
     "utilities"
   ],
   "description": "A powerful, flexible kanban app that helps you organise work, track progress, and deliver results-all in one place.",
-  "tipi_version": 1,
-  "version": "0.2.4",
+  "tipi_version": 2,
+  "version": "0.2.5",
   "source": "https://github.com/kanbn/kan",
   "website": "https://kan.bn",
   "exposable": true,
@@ -19,26 +19,26 @@
     "amd64"
   ],
   "created_at": 1752274451465,
-  "updated_at": 1752275994612,
+  "updated_at": 1752883564256,
   "dynamic_config": true,
   "form_fields": [
     {
-        "type": "url",
-        "label": "Next Public Base URL",
-        "required": true,
-        "env_variable": "KAN_NEXT_PUBLIC_BASE_URL"
+      "type": "url",
+      "label": "Next Public Base URL",
+      "required": true,
+      "env_variable": "KAN_NEXT_PUBLIC_BASE_URL"
     },
     {
-        "type": "random",
-        "label": "Better Auth Secret",
-        "min": 32,
-        "env_variable": "KAN_BETTER_AUTH_SECRET"
+      "type": "random",
+      "label": "Better Auth Secret",
+      "min": 32,
+      "env_variable": "KAN_BETTER_AUTH_SECRET"
     },
     {
-        "type": "random",
-        "label": "Postgres Password",
-        "min": 32,
-        "env_variable": "KAN_DB_PASSWORD"
+      "type": "random",
+      "label": "Postgres Password",
+      "min": 32,
+      "env_variable": "KAN_DB_PASSWORD"
     }
   ],
   "$schema": "../app-info-schema.json"
