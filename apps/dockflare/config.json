@@ -10,8 +10,8 @@
     "utilities"
   ],
   "description": "DockFlare simplifies Cloudflare Tunnel and Zero Trust Access policy management by using Docker labels for automated configuration, while also providing a powerful web UI for manual service definitions and policy overrides.",
-  "tipi_version": 9,
-  "version": "v1.9.4",
+  "tipi_version": 10,
+  "version": "v1.9.5",
   "source": "https://github.com/ChrispyBacon-dev/DockFlare",
   "exposable": true,
   "supported_architectures": [
@@ -19,7 +19,7 @@
     "amd64"
   ],
   "created_at": 1748951010245,
-  "updated_at": 1753056389214,
+  "updated_at": 1753661177516,
   "dynamic_config": true,
   "form_fields": [
     {
