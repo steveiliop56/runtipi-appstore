@@ -7,7 +7,7 @@
             "isMain": true,
             "internalPort": 443,
             "environment": {
-                "DYNAMIC_CONFIG": "false",
+                "DYNAMIC_CONFIG": "true",
                 "HOSTNAME": "${MESHCENTRAL_HOSTNAME}",
                 "ALLOW_NEW_ACCOUNTS": "${MESHCENTRAL_ALLOW_NEW_ACCOUNTS}",
                 "USE_MONGODB": "false"
