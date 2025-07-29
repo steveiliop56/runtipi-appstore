@@ -5,7 +5,7 @@
             "name": "meshcentral",
             "image": "ghcr.io/ylianst/meshcentral:1.1.48",
             "isMain": true,
-            "internalPort": 80,
+            "internalPort": 443,
             "environment": {
                 "DYNAMIC_CONFIG": "false",
                 "HOSTNAME": "${MESHCENTRAL_HOSTNAME}",
@@ -29,7 +29,11 @@
                     "hostPath": "${APP_DATA_DIR}/data/meshcentral-backups",
                     "containerPath": "/opt/meshcentral/meshcentral-backups"
                 }
-            ]
+            ],
+            "extraLabels": {
+                "traefik.http.services.{{RUNTIPI_APP_ID}}.loadbalancer.server.scheme": "https",
+                "traefik.http.services.{{RUNTIPI_APP_ID}}.loadbalancer.serverstransport": "insecuretransport@file"
+            }
         }
     ]
 }

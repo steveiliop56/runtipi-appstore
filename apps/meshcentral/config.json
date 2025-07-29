@@ -5,6 +5,7 @@
   "short_desc": "A complete web-based remote monitoring and management web site.",
   "author": "Ylianst",
   "port": 8392,
+  "https": true,
   "categories": [
     "utilities",
     "security"
@@ -20,7 +21,7 @@
     "amd64"
   ],
   "created_at": 1753821777617,
-  "updated_at": 1753821777617,
+  "updated_at": 1753822384775,
   "dynamic_config": true,
   "form_fields": [
     {
