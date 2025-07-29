@@ -1,0 +1,35 @@
+{
+    "$schema": "../dynamic-compose-schema.json",
+    "services": [
+        {
+            "name": "meshcentral",
+            "image": "ghcr.io/ylianst/meshcentral:1.1.48",
+            "isMain": true,
+            "internalPort": 80,
+            "environment": {
+                "DYNAMIC_CONFIG": "false",
+                "HOSTNAME": "${MESHCENTRAL_HOSTNAME}",
+                "ALLOW_NEW_ACCOUNTS": "${MESHCENTRAL_ALLOW_NEW_ACCOUNTS}",
+                "USE_MONGODB": "false"
+            },
+            "volumes": [
+                {
+                    "hostPath": "${APP_DATA_DIR}/data/meshcentral-data",
+                    "containerPath": "/opt/meshcentral/meshcentral-data"
+                },
+                {
+                    "hostPath": "${APP_DATA_DIR}/data/meshcentral-files",
+                    "containerPath": "/opt/meshcentral/meshcentral-files"
+                },
+                {
+                    "hostPath": "${APP_DATA_DIR}/data/meshcentral-web",
+                    "containerPath": "/opt/meshcentral/meshcentral-web"
+                },
+                {
+                    "hostPath": "${APP_DATA_DIR}/data/meshcentral-backups",
+                    "containerPath": "/opt/meshcentral/meshcentral-backups"
+                }
+            ]
+        }
+    ]
+}
