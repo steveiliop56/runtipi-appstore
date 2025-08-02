@@ -9,8 +9,8 @@
     "automation"
   ],
   "description": "n8n is a workflow automation platform that gives technical teams the flexibility of code with the speed of no-code. With 400+ integrations, native AI capabilities, and a fair-code license, n8n lets you build powerful automations while maintaining full control over your data and deployments.",
-  "tipi_version": 31,
-  "version": "1.105.0",
+  "tipi_version": 32,
+  "version": "1.105.2",
   "source": "https://github.com/n8n-io/n8n",
   "website": "https://n8n.io",
   "exposable": true,
@@ -19,7 +19,7 @@
     "amd64"
   ],
   "created_at": 1742933758826,
-  "updated_at": 1753833980213,
+  "updated_at": 1754093313730,
   "dynamic_config": true,
   "form_fields": [
     {
