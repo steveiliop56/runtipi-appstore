@@ -2,7 +2,7 @@
     "$schema": "../dynamic-compose-schema.json",
     "services": [
         {
-            "image": "ghcr.io/kanbn/kan:0.3.1",
+            "image": "ghcr.io/kanbn/kan:0.4.0",
             "name": "kan",
             "internalPort": 3000,
             "isMain": true,
