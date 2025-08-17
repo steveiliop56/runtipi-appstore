@@ -9,8 +9,8 @@
     "utilities"
   ],
   "description": "A powerful, flexible kanban app that helps you organise work, track progress, and deliver results-all in one place.",
-  "tipi_version": 4,
-  "version": "0.3.1",
+  "tipi_version": 5,
+  "version": "0.4.0",
   "source": "https://github.com/kanbn/kan",
   "website": "https://kan.bn",
   "exposable": true,
@@ -19,7 +19,7 @@
     "amd64"
   ],
   "created_at": 1752274451465,
-  "updated_at": 1754093194486,
+  "updated_at": 1755389186217,
   "dynamic_config": true,
   "form_fields": [
     {
