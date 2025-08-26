@@ -1,0 +1,57 @@
+{
+  "name": "Microbin",
+  "id": "microbin",
+  "available": true,
+  "short_desc": "A secure, configurable file-sharing and URL shortening web app written in Rust.",
+  "author": "szabodanika",
+  "port": 8392,
+  "categories": [
+    "utilities"
+  ],
+  "description": "MicroBin is a super tiny, feature-rich, configurable, self-contained and self-hosted paste bin web application. It is very easy to set up and use, and will only require a few megabytes of memory and disk storage.",
+  "tipi_version": 1,
+  "version": "2.0.4",
+  "source": "https://github.com/szabodanika/microbin",
+  "website": "https://microbin.eu",
+  "exposable": true,
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1756237614210,
+  "updated_at": 1756237614210,
+  "dynamic_config": true,
+  "form_fields": [
+    {
+        "type": "text",
+        "label": "Microbin Admin Username",
+        "hint": "Leave empty to disable admin interface.",
+        "required": false,
+        "env_variable": "MICROBIN_ADMIN_USERNAME"
+    },
+    {
+        "type": "password",
+        "label": "Microbin Admin Password",
+        "hint": "Leave empty to disable admin interface.",
+        "required": false,
+        "env_variable": "MICROBIN_ADMIN_PASSWORD"
+    },
+    {
+        "type": "boolean",
+        "label": "Allow Editing",
+        "hint": "Allow users to edit their pastes after creation.",
+        "required": false,
+        "default": false,
+        "env_variable": "MICROBIN_EDITABLE"
+    },
+    {
+        "type": "boolean",
+        "label": "Disable Listing",
+        "hint": "Disable listing of all pastes.",
+        "required": false,
+        "default": false,
+        "env_variable": "MICROBIN_NO_LISTING"
+    }
+  ],
+  "$schema": "../app-info-schema.json"
+}

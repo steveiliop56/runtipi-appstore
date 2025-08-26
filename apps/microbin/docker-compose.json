@@ -1,0 +1,23 @@
+{
+    "$schema": "../dynamic-compose-schema.json",
+    "services": [
+        {
+            "name": "microbin",
+            "image": "danielszabo99/microbin:2.0.4",
+            "isMain": true,
+            "internalPort": 8080,
+            "volumes": [
+                {
+                    "hostPath": "${APP_DATA_DIR}/data/microbin",
+                    "containerPath": "/app/microbin_data"
+                }
+            ],
+            "environment": {
+                "MICROBIN_ADMIN_USERNAME": "${MICROBIN_ADMIN_USERNAME}",
+                "MICROBIN_ADMIN_PASSWORD": "${MICROBIN_ADMIN_PASSWORD}",
+                "MICROBIN_EDITABLE": "${MICROBIN_EDITABLE}",
+                "MICROBIN_NO_LISTING": "${MICROBIN_NO_LISTING}"
+            }
+        }
+    ]
+}
