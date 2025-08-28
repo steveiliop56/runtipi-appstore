@@ -11,8 +11,8 @@
     "security"
   ],
   "description": "MeshCentral is a full computer management web site. With MeshCentral, you can run your own web server to remotely manage and control computers on a local network or anywhere on the internet. Once you get the server started, create device group and download and install an agent on each computer you want to manage.",
-  "tipi_version": 1,
-  "version": "1.1.48",
+  "tipi_version": 2,
+  "version": "1.1.49",
   "source": "https://github.com/Ylianst/MeshCentral",
   "website": "https://meshcentral.com",
   "exposable": true,
@@ -21,7 +21,7 @@
     "amd64"
   ],
   "created_at": 1753821777617,
-  "updated_at": 1753822699025,
+  "updated_at": 1756339514452,
   "dynamic_config": true,
   "form_fields": [
     {
