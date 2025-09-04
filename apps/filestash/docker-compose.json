@@ -18,16 +18,5 @@
         }
       ]
     }
-  ],
-  "overrides": [
-    {
-      "architecture": "arm64",
-      "services": [
-        {
-          "name": "filestash",
-          "image": "machines/filestash:latest-arm64v8"
-        }
-      ]
-    }
   ]
 }

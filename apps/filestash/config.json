@@ -10,7 +10,7 @@
     "utilities"
   ],
   "description": "A file manager / web client for SFTP, S3, FTP, WebDAV, Git, Minio, LDAP, CalDAV, CardDAV, Mysql, Backblaze, ...",
-  "tipi_version": 2,
+  "tipi_version": 3,
   "version": "latest",
   "source": "https://github.com/mickael-kerjean/filestash",
   "website": "https://www.filestash.app",
@@ -20,7 +20,7 @@
     "amd64"
   ],
   "created_at": 1749136270160,
-  "updated_at": 1749137222390,
+  "updated_at": 1756997536754,
   "dynamic_config": true,
   "form_fields": [],
   "$schema": "../app-info-schema.json",
