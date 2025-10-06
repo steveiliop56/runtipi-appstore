@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@runtipi/common": "^0.8.0",
+    "@runtipi/common": "^1.0.0",
     "bun": "^1.2.10",
     "zod": "^3.24.2",
     "zod-to-json-schema": "^3.24.5",
