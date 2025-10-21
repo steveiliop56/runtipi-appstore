@@ -29,6 +29,12 @@ Then remove the old data:
 rm -rf runtipi/app-data/steveiliop56/ocis/data/ocis
 ```
 
+Recreate the data directory (use a non-root account):
+
+```bash
+mkdir -p runtipi/app-data/steveiliop56/ocis/data/ocis
+```
+
 Finally restart the app and you should be good to go.
 
 ## Introduction
