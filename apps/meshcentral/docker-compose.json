@@ -3,7 +3,7 @@
     "services": [
         {
             "name": "meshcentral",
-            "image": "ghcr.io/ylianst/meshcentral:1.1.52",
+            "image": "ghcr.io/ylianst/meshcentral:1.1.53",
             "isMain": true,
             "internalPort": 443,
             "environment": {
