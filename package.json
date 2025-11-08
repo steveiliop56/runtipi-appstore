@@ -1,6 +1,8 @@
 {
   "dependencies": {
-    "bun": "^1.2.10"
+    "@runtipi/common": "^1.0.1",
+    "bun": "^1.2.10",
+    "zod-validation-error": "^5.0.0"
   },
   "devDependencies": {
     "@types/bun": "^1.2.10",
