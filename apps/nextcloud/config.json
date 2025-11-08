@@ -5,19 +5,14 @@
   "short_desc": "A safe home for all your data.",
   "author": "nextcloud",
   "port": 8301,
-  "categories": [
-    "data"
-  ],
+  "categories": ["data"],
   "description": "Nextcloud is a suite of client-server software for creating and using file hosting services.",
-  "tipi_version": 8,
+  "tipi_version": 9,
   "version": "31.0.10",
   "source": "https://github.com/nextcloud/server",
   "website": "https://nextcloud.com",
   "exposable": true,
-  "supported_architectures": [
-    "arm64",
-    "amd64"
-  ],
+  "supported_architectures": ["arm64", "amd64"],
   "created_at": 1746979653120,
   "updated_at": 1761523582972,
   "dynamic_config": true,
@@ -50,5 +45,5 @@
       "env_variable": "NEXTCLOUD_TRUSTED_DOMAINS"
     }
   ],
-  "$schema": "../app-info-schema.json"
+  "$schema": "https://schemas.runtipi.io/app-info.json"
 }

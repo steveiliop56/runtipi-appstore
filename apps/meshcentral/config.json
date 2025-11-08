@@ -6,20 +6,14 @@
   "author": "Ylianst",
   "port": 8392,
   "https": true,
-  "categories": [
-    "utilities",
-    "security"
-  ],
+  "categories": ["utilities", "security"],
   "description": "MeshCentral is a full computer management web site. With MeshCentral, you can run your own web server to remotely manage and control computers on a local network or anywhere on the internet. Once you get the server started, create device group and download and install an agent on each computer you want to manage.",
-  "tipi_version": 6,
+  "tipi_version": 7,
   "version": "1.1.53",
   "source": "https://github.com/Ylianst/MeshCentral",
   "website": "https://meshcentral.com",
   "exposable": true,
-  "supported_architectures": [
-    "arm64",
-    "amd64"
-  ],
+  "supported_architectures": ["arm64", "amd64"],
   "created_at": 1753821777617,
   "updated_at": 1761437275015,
   "dynamic_config": true,
@@ -38,5 +32,5 @@
       "env_variable": "MESHCENTRAL_ALLOW_NEW_ACCOUNTS"
     }
   ],
-  "$schema": "../app-info-schema.json"
+  "$schema": "https://schemas.runtipi.io/app-info.json"
 }

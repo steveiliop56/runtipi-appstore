@@ -1,31 +1,53 @@
 {
-    "$schema": "../dynamic-compose-schema.json",
-    "services": [
+  "$schema": "https://schemas.runtipi.io/v2/dynamic-compose.json",
+  "services": [
+    {
+      "name": "dockflare",
+      "image": "alplat/dockflare:v1.9.5",
+      "internalPort": 5000,
+      "isMain": true,
+      "environment": [
         {
-            "name": "dockflare",
-            "image": "alplat/dockflare:v1.9.5",
-            "internalPort": 5000,
-            "isMain": true,
-            "environment": {
-                "STATE_FILE_PATH": "/app/data/state.json",
-                "TZ": "${TZ}",
-                "CF_API_TOKEN": "${DOCKFLARE_CF_API_TOKEN}",
-                "CF_ACCOUNT_ID": "${DOCKFLARE_CF_ACCOUNT_ID}",
-                "CF_ZONE_ID": "${DOCKFLARE_CF_ZONE_ID}",
-                "TUNNEL_NAME": "${DOCKFLARE_TUNNEL_NAME}",
-                "CLOUDFLARED_NETWORK_NAME": "runtipi_tipi_main_network"
-            },
-            "volumes": [
-                {
-                    "hostPath": "${APP_DATA_DIR}/data",
-                    "containerPath": "/app/data"
-                },
-                {
-                    "hostPath": "/var/run/docker.sock",
-                    "containerPath": "/var/run/docker.sock",
-                    "readOnly": true
-                }
-            ]
+          "key": "STATE_FILE_PATH",
+          "value": "/app/data/state.json"
+        },
+        {
+          "key": "TZ",
+          "value": "${TZ}"
+        },
+        {
+          "key": "CF_API_TOKEN",
+          "value": "${DOCKFLARE_CF_API_TOKEN}"
+        },
+        {
+          "key": "CF_ACCOUNT_ID",
+          "value": "${DOCKFLARE_CF_ACCOUNT_ID}"
+        },
+        {
+          "key": "CF_ZONE_ID",
+          "value": "${DOCKFLARE_CF_ZONE_ID}"
+        },
+        {
+          "key": "TUNNEL_NAME",
+          "value": "${DOCKFLARE_TUNNEL_NAME}"
+        },
+        {
+          "key": "CLOUDFLARED_NETWORK_NAME",
+          "value": "runtipi_tipi_main_network"
         }
-    ]
+      ],
+      "volumes": [
+        {
+          "hostPath": "${APP_DATA_DIR}/data",
+          "containerPath": "/app/data"
+        },
+        {
+          "hostPath": "/var/run/docker.sock",
+          "containerPath": "/var/run/docker.sock",
+          "readOnly": true
+        }
+      ]
+    }
+  ],
+  "schemaVersion": 2
 }

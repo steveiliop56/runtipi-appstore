@@ -5,19 +5,14 @@
   "short_desc": "Remote development environments.",
   "author": "coder",
   "port": 8095,
-  "categories": [
-    "development"
-  ],
+  "categories": ["development"],
   "description": "Coder enables organizations to set up development environments in their public or private cloud infrastructure.",
-  "tipi_version": 16,
+  "tipi_version": 17,
   "version": "v2.28.0",
   "source": "https://github.com/coder/coder",
   "website": "https://coder.com",
   "exposable": true,
-  "supported_architectures": [
-    "arm64",
-    "amd64"
-  ],
+  "supported_architectures": ["arm64", "amd64"],
   "created_at": 1746477403489,
   "updated_at": 1762387567244,
   "dynamic_config": true,
@@ -36,5 +31,5 @@
       "env_variable": "CODER_DB_PASSWORD"
     }
   ],
-  "$schema": "../app-info-schema.json"
+  "$schema": "https://schemas.runtipi.io/app-info.json"
 }

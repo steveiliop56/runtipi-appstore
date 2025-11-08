@@ -77,7 +77,6 @@ ACME is the protocol used by Let's Encrypt to automate the issuance of HTTPS cer
 
 - [Use ACME in development & pre-production](https://smallstep.com/blog/private-acme-server/#local-development--pre-production)
 - Supports the most popular [ACME challenge types](https://letsencrypt.org/docs/challenge-types/):
-
   - For `http-01`, place a token at a well-known URL to prove that you control the web server
   - For `dns-01`, add a `TXT` record to prove that you control the DNS record set
   - For `tls-alpn-01`, respond to the challenge at the TLS layer ([as Caddy does](https://caddy.community/t/caddy-supports-the-acme-tls-alpn-challenge/4860)) to prove that you control the web server

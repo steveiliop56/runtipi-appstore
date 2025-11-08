@@ -1,55 +1,55 @@
 {
-    "$schema": "../dynamic-compose-schema.json",
-    "services": [
+  "$schema": "https://schemas.runtipi.io/v2/dynamic-compose.json",
+  "services": [
+    {
+      "name": "minio",
+      "image": "minio/minio:RELEASE.2025-04-22T22-12-26Z",
+      "isMain": true,
+      "internalPort": 9001,
+      "addPorts": [
         {
-            "name": "minio",
-            "image": "minio/minio:RELEASE.2025-04-22T22-12-26Z",
-            "isMain": true,
-            "internalPort": 9001,
-            "addPorts": [
-                {
-                    "containerPort": 9000,
-                    "hostPort": 8923
-                }
-            ],
-            "environment": {
-                "MINIO_CONFIG_ENV_FILE": "/etc/config.env"
-            },
-            "volumes": [
-                {
-                    "hostPath": "${APP_DATA_DIR}/data/minio",
-                    "containerPath": "/mnt/data"
-                },
-                {
-                    "hostPath": "${APP_DATA_DIR}/data/config/minio.env",
-                    "containerPath": "/etc/config.env"
-                }
-            ],
-            "command": [
-                "server",
-                "--console-address",
-                ":9001"
-            ],
-            "extraLabels": {
-                "traefik.http.middlewares.{{RUNTIPI_APP_ID}}-s3-web-redirect.redirectscheme.scheme": "https",
-                "traefik.http.services.{{RUNTIPI_APP_ID}}-s3.loadbalancer.server.port": "9000",
-                "traefik.http.routers.{{RUNTIPI_APP_ID}}-s3-insecure.rule": "Host(`{{RUNTIPI_APP_ID}}-s3.${DOMAIN}`)",
-                "traefik.http.routers.{{RUNTIPI_APP_ID}}-s3-insecure.entrypoints": "web",
-                "traefik.http.routers.{{RUNTIPI_APP_ID}}-s3-insecure.service": "{{RUNTIPI_APP_ID}}-s3",
-                "traefik.http.routers.{{RUNTIPI_APP_ID}}-s3-insecure.middlewares": "{{RUNTIPI_APP_ID}}-s3-web-redirect",
-                "traefik.http.routers.{{RUNTIPI_APP_ID}}-s3.rule": "Host(`{{RUNTIPI_APP_ID}}-s3.${DOMAIN}`)",
-                "traefik.http.routers.{{RUNTIPI_APP_ID}}-s3.entrypoints": "websecure",
-                "traefik.http.routers.{{RUNTIPI_APP_ID}}-s3.service": "{{RUNTIPI_APP_ID}}-s3",
-                "traefik.http.routers.{{RUNTIPI_APP_ID}}-s3.tls.certresolver": "myresolver",
-                "traefik.http.routers.{{RUNTIPI_APP_ID}}-s3-local-insecure.rule": "Host(`{{RUNTIPI_APP_ID}}-s3.${LOCAL_DOMAIN}`)",
-                "traefik.http.routers.{{RUNTIPI_APP_ID}}-s3-local-insecure.entrypoints": "web",
-                "traefik.http.routers.{{RUNTIPI_APP_ID}}-s3-local-insecure.service": "{{RUNTIPI_APP_ID}}-s3",
-                "traefik.http.routers.{{RUNTIPI_APP_ID}}-s3-local-insecure.middlewares": "{{RUNTIPI_APP_ID}}-s3-web-redirect",
-                "traefik.http.routers.{{RUNTIPI_APP_ID}}-s3-local.rule": "Host(`{{RUNTIPI_APP_ID}}-s3.${LOCAL_DOMAIN}`)",
-                "traefik.http.routers.{{RUNTIPI_APP_ID}}-s3-local.entrypoints": "websecure",
-                "traefik.http.routers.{{RUNTIPI_APP_ID}}-s3-local.service": "{{RUNTIPI_APP_ID}}-s3",
-                "traefik.http.routers.{{RUNTIPI_APP_ID}}-s3-local.tls": "true"
-            }
+          "containerPort": 9000,
+          "hostPort": 8923
         }
-    ]
+      ],
+      "environment": [
+        {
+          "key": "MINIO_CONFIG_ENV_FILE",
+          "value": "/etc/config.env"
+        }
+      ],
+      "volumes": [
+        {
+          "hostPath": "${APP_DATA_DIR}/data/minio",
+          "containerPath": "/mnt/data"
+        },
+        {
+          "hostPath": "${APP_DATA_DIR}/data/config/minio.env",
+          "containerPath": "/etc/config.env"
+        }
+      ],
+      "command": ["server", "--console-address", ":9001"],
+      "extraLabels": {
+        "traefik.http.middlewares.{{RUNTIPI_APP_ID}}-s3-web-redirect.redirectscheme.scheme": "https",
+        "traefik.http.services.{{RUNTIPI_APP_ID}}-s3.loadbalancer.server.port": "9000",
+        "traefik.http.routers.{{RUNTIPI_APP_ID}}-s3-insecure.rule": "Host(`{{RUNTIPI_APP_ID}}-s3.${DOMAIN}`)",
+        "traefik.http.routers.{{RUNTIPI_APP_ID}}-s3-insecure.entrypoints": "web",
+        "traefik.http.routers.{{RUNTIPI_APP_ID}}-s3-insecure.service": "{{RUNTIPI_APP_ID}}-s3",
+        "traefik.http.routers.{{RUNTIPI_APP_ID}}-s3-insecure.middlewares": "{{RUNTIPI_APP_ID}}-s3-web-redirect",
+        "traefik.http.routers.{{RUNTIPI_APP_ID}}-s3.rule": "Host(`{{RUNTIPI_APP_ID}}-s3.${DOMAIN}`)",
+        "traefik.http.routers.{{RUNTIPI_APP_ID}}-s3.entrypoints": "websecure",
+        "traefik.http.routers.{{RUNTIPI_APP_ID}}-s3.service": "{{RUNTIPI_APP_ID}}-s3",
+        "traefik.http.routers.{{RUNTIPI_APP_ID}}-s3.tls.certresolver": "myresolver",
+        "traefik.http.routers.{{RUNTIPI_APP_ID}}-s3-local-insecure.rule": "Host(`{{RUNTIPI_APP_ID}}-s3.${LOCAL_DOMAIN}`)",
+        "traefik.http.routers.{{RUNTIPI_APP_ID}}-s3-local-insecure.entrypoints": "web",
+        "traefik.http.routers.{{RUNTIPI_APP_ID}}-s3-local-insecure.service": "{{RUNTIPI_APP_ID}}-s3",
+        "traefik.http.routers.{{RUNTIPI_APP_ID}}-s3-local-insecure.middlewares": "{{RUNTIPI_APP_ID}}-s3-web-redirect",
+        "traefik.http.routers.{{RUNTIPI_APP_ID}}-s3-local.rule": "Host(`{{RUNTIPI_APP_ID}}-s3.${LOCAL_DOMAIN}`)",
+        "traefik.http.routers.{{RUNTIPI_APP_ID}}-s3-local.entrypoints": "websecure",
+        "traefik.http.routers.{{RUNTIPI_APP_ID}}-s3-local.service": "{{RUNTIPI_APP_ID}}-s3",
+        "traefik.http.routers.{{RUNTIPI_APP_ID}}-s3-local.tls": "true"
+      }
+    }
+  ],
+  "schemaVersion": 2
 }

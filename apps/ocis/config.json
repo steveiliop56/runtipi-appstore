@@ -7,7 +7,7 @@
   "port": 9200,
   "categories": ["data"],
   "description": "ownCloud Infinite Scale (oCIS) is the new file sync & share platform that will be the foundation of your data management platform.",
-  "tipi_version": 6,
+  "tipi_version": 7,
   "version": "7.3.0",
   "source": "https://github.com/owncloud/ocis",
   "website": "https://doc.owncloud.com/ocis/next",
@@ -25,5 +25,5 @@
       "env_variable": "OCIS_URL"
     }
   ],
-  "$schema": "../app-info-schema.json"
+  "$schema": "https://schemas.runtipi.io/app-info.json"
 }

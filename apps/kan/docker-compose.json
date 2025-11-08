@@ -1,37 +1,59 @@
 {
-    "$schema": "../dynamic-compose-schema.json",
-    "services": [
+  "$schema": "https://schemas.runtipi.io/v2/dynamic-compose.json",
+  "services": [
+    {
+      "image": "ghcr.io/kanbn/kan:0.4.7",
+      "name": "kan",
+      "internalPort": 3000,
+      "isMain": true,
+      "environment": [
         {
-            "image": "ghcr.io/kanbn/kan:0.4.7",
-            "name": "kan",
-            "internalPort": 3000,
-            "isMain": true,
-            "environment": {
-                "NEXT_PUBLIC_BASE_URL": "${KAN_NEXT_PUBLIC_BASE_URL}",
-                "BETTER_AUTH_SECRET": "${KAN_BETTER_AUTH_SECRET}",
-                "POSTGRES_URL": "postgresql://kan:${KAN_DB_PASSWORD}@kan-db:5432/kan-db?sslmode=disable",
-                "NEXT_PUBLIC_ALLOW_CREDENTIALS": "true"
-            },
-            "dependsOn": {
-                "kan-db": {
-                    "condition": "service_started"
-                }
-            }
+          "key": "NEXT_PUBLIC_BASE_URL",
+          "value": "${KAN_NEXT_PUBLIC_BASE_URL}"
         },
         {
-            "image": "postgres:15",
-            "name": "kan-db",
-            "environment": {
-                "POSTGRES_DB": "kan-db",
-                "POSTGRES_USER": "kan",
-                "POSTGRES_PASSWORD": "${KAN_DB_PASSWORD}"
-            },
-            "volumes": [
-                {
-                    "hostPath": "${APP_DATA_DIR}/data/postgres",
-                    "containerPath": "/var/lib/postgresql/data"
-                }
-            ]
+          "key": "BETTER_AUTH_SECRET",
+          "value": "${KAN_BETTER_AUTH_SECRET}"
+        },
+        {
+          "key": "POSTGRES_URL",
+          "value": "postgresql://kan:${KAN_DB_PASSWORD}@kan-db:5432/kan-db?sslmode=disable"
+        },
+        {
+          "key": "NEXT_PUBLIC_ALLOW_CREDENTIALS",
+          "value": "true"
         }
-    ]
+      ],
+      "dependsOn": {
+        "kan-db": {
+          "condition": "service_started"
+        }
+      }
+    },
+    {
+      "image": "postgres:15",
+      "name": "kan-db",
+      "environment": [
+        {
+          "key": "POSTGRES_DB",
+          "value": "kan-db"
+        },
+        {
+          "key": "POSTGRES_USER",
+          "value": "kan"
+        },
+        {
+          "key": "POSTGRES_PASSWORD",
+          "value": "${KAN_DB_PASSWORD}"
+        }
+      ],
+      "volumes": [
+        {
+          "hostPath": "${APP_DATA_DIR}/data/postgres",
+          "containerPath": "/var/lib/postgresql/data"
+        }
+      ]
+    }
+  ],
+  "schemaVersion": 2
 }

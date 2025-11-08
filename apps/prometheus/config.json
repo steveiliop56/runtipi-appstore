@@ -5,22 +5,17 @@
   "short_desc": "The Prometheus monitoring system and time series database.",
   "author": "prometheus",
   "port": 9090,
-  "categories": [
-    "utilities"
-  ],
+  "categories": ["utilities"],
   "description": "Prometheus, a Cloud Native Computing Foundation project, is a systems and service monitoring system. It collects metrics from configured targets at given intervals, evaluates rule expressions, displays the results, and can trigger alerts when specified conditions are observed.",
-  "tipi_version": 10,
+  "tipi_version": 11,
   "version": "v3.7.3",
   "source": "https://github.com/prometheus/prometheus",
   "website": "https://prometheus.io",
   "exposable": true,
-  "supported_architectures": [
-    "arm64",
-    "amd64"
-  ],
+  "supported_architectures": ["arm64", "amd64"],
   "created_at": 1747399590441,
   "updated_at": 1761869345306,
   "dynamic_config": true,
   "form_fields": [],
-  "$schema": "../app-info-schema.json"
+  "$schema": "https://schemas.runtipi.io/app-info.json"
 }

@@ -1,41 +1,72 @@
 {
-    "$schema": "../dynamic-compose-schema.json",
-    "services": [
+  "$schema": "https://schemas.runtipi.io/v2/dynamic-compose.json",
+  "services": [
+    {
+      "name": "nextcloud",
+      "image": "nextcloud:31.0.10",
+      "internalPort": 80,
+      "isMain": true,
+      "volumes": [
         {
-            "name": "nextcloud",
-            "image": "nextcloud:31.0.10",
-            "internalPort": 80,
-            "isMain": true,
-            "volumes": [
-                {
-                    "hostPath": "${APP_DATA_DIR}/data/nextcloud",
-                    "containerPath": "/var/www/html"
-                }
-            ],
-            "environment": {
-                "POSTGRES_DB": "nextcloud",
-                "POSTGRES_USER": "nextcloud",
-                "POSTGRES_PASSWORD": "${NEXTCLOUD_DB_PASSWORD}",
-                "POSTGRES_HOST": "nextcloud-db",
-                "NEXTCLOUD_ADMIN_USER": "${NEXTCLOUD_ADMIN_USER}",
-                "NEXTCLOUD_ADMIN_PASSWORD": "${NEXTCLOUD_ADMIN_PASSWORD}",
-                "NEXTCLOUD_TRUSTED_DOMAINS": "${NEXTCLOUD_TRUSTED_DOMAINS}"
-            }
+          "hostPath": "${APP_DATA_DIR}/data/nextcloud",
+          "containerPath": "/var/www/html"
+        }
+      ],
+      "environment": [
+        {
+          "key": "POSTGRES_DB",
+          "value": "nextcloud"
         },
         {
-            "name": "nextcloud-db",
-            "image": "postgres:17-alpine",
-            "volumes": [
-                {
-                    "hostPath": "${APP_DATA_DIR}/data/db",
-                    "containerPath": "/var/lib/postgresql/data"
-                }
-            ],
-            "environment": {
-                "POSTGRES_DB": "nextcloud",
-                "POSTGRES_USER": "nextcloud",
-                "POSTGRES_PASSWORD": "${NEXTCLOUD_DB_PASSWORD}"
-            }
+          "key": "POSTGRES_USER",
+          "value": "nextcloud"
+        },
+        {
+          "key": "POSTGRES_PASSWORD",
+          "value": "${NEXTCLOUD_DB_PASSWORD}"
+        },
+        {
+          "key": "POSTGRES_HOST",
+          "value": "nextcloud-db"
+        },
+        {
+          "key": "NEXTCLOUD_ADMIN_USER",
+          "value": "${NEXTCLOUD_ADMIN_USER}"
+        },
+        {
+          "key": "NEXTCLOUD_ADMIN_PASSWORD",
+          "value": "${NEXTCLOUD_ADMIN_PASSWORD}"
+        },
+        {
+          "key": "NEXTCLOUD_TRUSTED_DOMAINS",
+          "value": "${NEXTCLOUD_TRUSTED_DOMAINS}"
         }
-    ]
+      ]
+    },
+    {
+      "name": "nextcloud-db",
+      "image": "postgres:17-alpine",
+      "volumes": [
+        {
+          "hostPath": "${APP_DATA_DIR}/data/db",
+          "containerPath": "/var/lib/postgresql/data"
+        }
+      ],
+      "environment": [
+        {
+          "key": "POSTGRES_DB",
+          "value": "nextcloud"
+        },
+        {
+          "key": "POSTGRES_USER",
+          "value": "nextcloud"
+        },
+        {
+          "key": "POSTGRES_PASSWORD",
+          "value": "${NEXTCLOUD_DB_PASSWORD}"
+        }
+      ]
+    }
+  ],
+  "schemaVersion": 2
 }

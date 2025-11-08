@@ -1,14 +1,24 @@
 {
-    "$schema": "../dynamic-compose-schema.json",
-    "services": [
+  "$schema": "https://schemas.runtipi.io/v2/dynamic-compose.json",
+  "services": [
+    {
+      "name": "newt",
+      "image": "fosrl/newt:1.6.0",
+      "environment": [
         {
-            "name": "newt",
-            "image": "fosrl/newt:1.6.0",
-            "environment": {
-                "PANGOLIN_ENDPOINT": "${PANGOLIN_ENDPOINT}",
-                "NEWT_ID": "${NEWT_ID}",
-                "NEWT_SECRET": "${NEWT_SECRET}"
-            }
+          "key": "PANGOLIN_ENDPOINT",
+          "value": "${PANGOLIN_ENDPOINT}"
+        },
+        {
+          "key": "NEWT_ID",
+          "value": "${NEWT_ID}"
+        },
+        {
+          "key": "NEWT_SECRET",
+          "value": "${NEWT_SECRET}"
         }
-    ]
+      ]
+    }
+  ],
+  "schemaVersion": 2
 }

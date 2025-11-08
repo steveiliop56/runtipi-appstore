@@ -1,23 +1,36 @@
 {
-    "$schema": "../dynamic-compose-schema.json",
-    "services": [
+  "$schema": "https://schemas.runtipi.io/v2/dynamic-compose.json",
+  "services": [
+    {
+      "name": "microbin",
+      "image": "danielszabo99/microbin:2.0.4",
+      "isMain": true,
+      "internalPort": 8080,
+      "volumes": [
         {
-            "name": "microbin",
-            "image": "danielszabo99/microbin:2.0.4",
-            "isMain": true,
-            "internalPort": 8080,
-            "volumes": [
-                {
-                    "hostPath": "${APP_DATA_DIR}/data/microbin",
-                    "containerPath": "/app/microbin_data"
-                }
-            ],
-            "environment": {
-                "MICROBIN_ADMIN_USERNAME": "${MICROBIN_ADMIN_USERNAME}",
-                "MICROBIN_ADMIN_PASSWORD": "${MICROBIN_ADMIN_PASSWORD}",
-                "MICROBIN_EDITABLE": "${MICROBIN_EDITABLE}",
-                "MICROBIN_NO_LISTING": "${MICROBIN_NO_LISTING}"
-            }
+          "hostPath": "${APP_DATA_DIR}/data/microbin",
+          "containerPath": "/app/microbin_data"
         }
-    ]
+      ],
+      "environment": [
+        {
+          "key": "MICROBIN_ADMIN_USERNAME",
+          "value": "${MICROBIN_ADMIN_USERNAME}"
+        },
+        {
+          "key": "MICROBIN_ADMIN_PASSWORD",
+          "value": "${MICROBIN_ADMIN_PASSWORD}"
+        },
+        {
+          "key": "MICROBIN_EDITABLE",
+          "value": "${MICROBIN_EDITABLE}"
+        },
+        {
+          "key": "MICROBIN_NO_LISTING",
+          "value": "${MICROBIN_NO_LISTING}"
+        }
+      ]
+    }
+  ],
+  "schemaVersion": 2
 }

@@ -1,39 +1,52 @@
 {
-    "$schema": "../dynamic-compose-schema.json",
-    "services": [
+  "$schema": "https://schemas.runtipi.io/v2/dynamic-compose.json",
+  "services": [
+    {
+      "name": "meshcentral",
+      "image": "ghcr.io/ylianst/meshcentral:1.1.53",
+      "isMain": true,
+      "internalPort": 443,
+      "environment": [
         {
-            "name": "meshcentral",
-            "image": "ghcr.io/ylianst/meshcentral:1.1.53",
-            "isMain": true,
-            "internalPort": 443,
-            "environment": {
-                "DYNAMIC_CONFIG": "true",
-                "HOSTNAME": "${MESHCENTRAL_HOSTNAME}",
-                "ALLOW_NEW_ACCOUNTS": "${MESHCENTRAL_ALLOW_NEW_ACCOUNTS}",
-                "USE_MONGODB": "false"
-            },
-            "volumes": [
-                {
-                    "hostPath": "${APP_DATA_DIR}/data/meshcentral-data",
-                    "containerPath": "/opt/meshcentral/meshcentral-data"
-                },
-                {
-                    "hostPath": "${APP_DATA_DIR}/data/meshcentral-files",
-                    "containerPath": "/opt/meshcentral/meshcentral-files"
-                },
-                {
-                    "hostPath": "${APP_DATA_DIR}/data/meshcentral-web",
-                    "containerPath": "/opt/meshcentral/meshcentral-web"
-                },
-                {
-                    "hostPath": "${APP_DATA_DIR}/data/meshcentral-backups",
-                    "containerPath": "/opt/meshcentral/meshcentral-backups"
-                }
-            ],
-            "extraLabels": {
-                "traefik.http.services.{{RUNTIPI_APP_ID}}.loadbalancer.server.scheme": "https",
-                "traefik.http.services.{{RUNTIPI_APP_ID}}.loadbalancer.serverstransport": "insecuretransport@file"
-            }
+          "key": "DYNAMIC_CONFIG",
+          "value": "true"
+        },
+        {
+          "key": "HOSTNAME",
+          "value": "${MESHCENTRAL_HOSTNAME}"
+        },
+        {
+          "key": "ALLOW_NEW_ACCOUNTS",
+          "value": "${MESHCENTRAL_ALLOW_NEW_ACCOUNTS}"
+        },
+        {
+          "key": "USE_MONGODB",
+          "value": "false"
         }
-    ]
+      ],
+      "volumes": [
+        {
+          "hostPath": "${APP_DATA_DIR}/data/meshcentral-data",
+          "containerPath": "/opt/meshcentral/meshcentral-data"
+        },
+        {
+          "hostPath": "${APP_DATA_DIR}/data/meshcentral-files",
+          "containerPath": "/opt/meshcentral/meshcentral-files"
+        },
+        {
+          "hostPath": "${APP_DATA_DIR}/data/meshcentral-web",
+          "containerPath": "/opt/meshcentral/meshcentral-web"
+        },
+        {
+          "hostPath": "${APP_DATA_DIR}/data/meshcentral-backups",
+          "containerPath": "/opt/meshcentral/meshcentral-backups"
+        }
+      ],
+      "extraLabels": {
+        "traefik.http.services.{{RUNTIPI_APP_ID}}.loadbalancer.server.scheme": "https",
+        "traefik.http.services.{{RUNTIPI_APP_ID}}.loadbalancer.serverstransport": "insecuretransport@file"
+      }
+    }
+  ],
+  "schemaVersion": 2
 }

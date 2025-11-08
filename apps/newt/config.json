@@ -4,20 +4,15 @@
   "available": true,
   "short_desc": "A tunneling client for Pangolin.",
   "author": "fosrl",
-  "categories": [
-    "network"
-  ],
+  "categories": ["network"],
   "description": "Newt is a fully user space WireGuard tunnel client and TCP/UDP proxy, designed to securely expose private resources controlled by Pangolin. By using Newt, you don't need to manage complex WireGuard tunnels and NATing.",
-  "tipi_version": 13,
+  "tipi_version": 14,
   "version": "1.6.0",
   "source": "https://github.com/fosrl/newt",
   "website": "https://docs.fossorial.io",
   "exposable": false,
   "no_gui": true,
-  "supported_architectures": [
-    "arm64",
-    "amd64"
-  ],
+  "supported_architectures": ["arm64", "amd64"],
   "created_at": 1749849033973,
   "updated_at": 1761869492653,
   "dynamic_config": true,
@@ -41,5 +36,5 @@
       "env_variable": "NEWT_SECRET"
     }
   ],
-  "$schema": "../app-info-schema.json"
+  "$schema": "https://schemas.runtipi.io/app-info.json"
 }

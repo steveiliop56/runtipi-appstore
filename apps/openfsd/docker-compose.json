@@ -1,47 +1,60 @@
 {
-    "$schema": "../dynamic-compose-schema.json",
-    "services": [
+  "$schema": "https://schemas.runtipi.io/v2/dynamic-compose.json",
+  "services": [
+    {
+      "image": "ghcr.io/renorris/openfsd:fsd-latest",
+      "name": "fsd",
+      "environment": [
         {
-            "image": "ghcr.io/renorris/openfsd:fsd-latest",
-            "name": "fsd",
-            "environment": {
-                "DATABASE_SOURCE_NAME": "/db/openfsd.db?_pragma=busy_timeout(5000)&_pragma=journal_mode(WAL)",
-                "DATABASE_AUTO_MIGRATE": "true"
-            },
-            "volumes": [
-                {
-                    "hostPath": "${APP_DATA_DIR}/data/db",
-                    "containerPath": "/db"
-                }
-            ],
-            "addPorts": [
-                {
-                    "containerPort": 6809,
-                    "hostPort": 6809,
-                    "tcp": true
-                }
-            ]
+          "key": "DATABASE_SOURCE_NAME",
+          "value": "/db/openfsd.db?_pragma=busy_timeout(5000)&_pragma=journal_mode(WAL)"
         },
         {
-            "image": "ghcr.io/renorris/openfsd:web-latest",
-            "name": "fsdweb",
-            "internalPort": 8000,
-            "isMain": true,
-            "environment": {
-                "DATABASE_SOURCE_NAME": "/db/openfsd.db?_pragma=busy_timeout(5000)&_pragma=journal_mode(WAL)",
-                "FSD_HTTP_SERVICE_ADDRESS": "http://fsd:13618"
-            },
-            "volumes": [
-                {
-                    "hostPath": "${APP_DATA_DIR}/data/db",
-                    "containerPath": "/db"
-                }
-            ],
-            "dependsOn": {
-                "fsd": {
-                    "condition": "service_started"
-                }
-            }
+          "key": "DATABASE_AUTO_MIGRATE",
+          "value": "true"
         }
-    ]
+      ],
+      "volumes": [
+        {
+          "hostPath": "${APP_DATA_DIR}/data/db",
+          "containerPath": "/db"
+        }
+      ],
+      "addPorts": [
+        {
+          "containerPort": 6809,
+          "hostPort": 6809,
+          "tcp": true
+        }
+      ]
+    },
+    {
+      "image": "ghcr.io/renorris/openfsd:web-latest",
+      "name": "fsdweb",
+      "internalPort": 8000,
+      "isMain": true,
+      "environment": [
+        {
+          "key": "DATABASE_SOURCE_NAME",
+          "value": "/db/openfsd.db?_pragma=busy_timeout(5000)&_pragma=journal_mode(WAL)"
+        },
+        {
+          "key": "FSD_HTTP_SERVICE_ADDRESS",
+          "value": "http://fsd:13618"
+        }
+      ],
+      "volumes": [
+        {
+          "hostPath": "${APP_DATA_DIR}/data/db",
+          "containerPath": "/db"
+        }
+      ],
+      "dependsOn": {
+        "fsd": {
+          "condition": "service_started"
+        }
+      }
+    }
+  ],
+  "schemaVersion": 2
 }

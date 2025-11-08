@@ -1,32 +1,54 @@
 {
-    "$schema": "../dynamic-compose-schema.json",
-    "services": [
+  "$schema": "https://schemas.runtipi.io/v2/dynamic-compose.json",
+  "services": [
+    {
+      "name": "lldap",
+      "image": "lldap/lldap:2025-05-19",
+      "internalPort": 17170,
+      "isMain": true,
+      "environment": [
         {
-            "name": "lldap",
-            "image": "lldap/lldap:2025-05-19",
-            "internalPort": 17170,
-            "isMain": true,
-            "environment": {
-                "UID": "1000",
-                "GID": "1000",
-                "TZ": "${TZ}",
-                "LLDAP_JWT_SECRET": "${LLDAP_JWT_SECRET}",
-                "LLDAP_KEY_SEED": "${LLDAP_KEY_SEED}",
-                "LLDAP_LDAP_BASE_DN": "${LLDAP_LDAP_BASE_DN}",
-                "LLDAP_LDAP_USER_PASS": "${LLDAP_LDAP_USER_PASS}"
-            },
-            "volumes": [
-                {
-                    "hostPath": "${APP_DATA_DIR}/data",
-                    "containerPath": "/data"
-                }
-            ],
-            "addPorts": [
-                {
-                    "containerPort": 3890,
-                    "hostPort": 3890
-                }
-            ]
+          "key": "UID",
+          "value": "1000"
+        },
+        {
+          "key": "GID",
+          "value": "1000"
+        },
+        {
+          "key": "TZ",
+          "value": "${TZ}"
+        },
+        {
+          "key": "LLDAP_JWT_SECRET",
+          "value": "${LLDAP_JWT_SECRET}"
+        },
+        {
+          "key": "LLDAP_KEY_SEED",
+          "value": "${LLDAP_KEY_SEED}"
+        },
+        {
+          "key": "LLDAP_LDAP_BASE_DN",
+          "value": "${LLDAP_LDAP_BASE_DN}"
+        },
+        {
+          "key": "LLDAP_LDAP_USER_PASS",
+          "value": "${LLDAP_LDAP_USER_PASS}"
         }
-    ]
+      ],
+      "volumes": [
+        {
+          "hostPath": "${APP_DATA_DIR}/data",
+          "containerPath": "/data"
+        }
+      ],
+      "addPorts": [
+        {
+          "containerPort": 3890,
+          "hostPort": 3890
+        }
+      ]
+    }
+  ],
+  "schemaVersion": 2
 }

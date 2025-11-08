@@ -1,11 +1,13 @@
 {
-    "$schema": "../dynamic-compose-schema.json",
-    "services": [
-        {
-            "name": "whoami",
-            "image": "traefik/whoami:v1.11.0",
-            "isMain": true,
-            "internalPort": "80"
-        }
-    ]
+  "$schema": "https://schemas.runtipi.io/v2/dynamic-compose.json",
+  "services": [
+    {
+      "name": "whoami",
+      "image": "traefik/whoami:v1.11.0",
+      "isMain": true,
+      "internalPort": "80",
+      "environment": []
+    }
+  ],
+  "schemaVersion": 2
 }

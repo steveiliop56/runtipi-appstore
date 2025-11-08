@@ -1,52 +1,86 @@
 {
-    "services": [
+  "services": [
+    {
+      "name": "n8n",
+      "image": "ghcr.io/n8n-io/n8n:1.119.0",
+      "isMain": true,
+      "internalPort": "5678",
+      "environment": [
         {
-            "name": "n8n",
-            "image": "ghcr.io/n8n-io/n8n:1.119.0",
-            "isMain": true,
-            "internalPort": "5678",
-            "environment": {
-                "DB_TYPE": "postgresdb",
-                "DB_POSTGRESDB_DATABASE": "n8n",
-                "DB_POSTGRESDB_HOST": "n8n-db",
-                "DB_POSTGRESDB_PORT": "5432",
-                "DB_POSTGRESDB_USER": "n8n",
-                "DB_POSTGRESDB_PASSWORD": "${N8N_DB_NON_ROOT_PASSWORD}"
-            },
-            "volumes": [
-                {
-                    "containerPath": "/home/node/.n8n",
-                    "hostPath": "${APP_DATA_DIR}/data/n8n"
-                }
-            ]
+          "key": "DB_TYPE",
+          "value": "postgresdb"
         },
         {
-            "name": "n8n-db",
-            "image": "postgres:16",
-            "environment": {
-                "POSTGRES_DB": "n8n",
-                "POSTGRES_USER": "root",
-                "POSTGRES_PASSWORD": "${N8N_DB_PASSWORD}",
-                "POSTGRES_NON_ROOT_USER": "n8n",
-                "POSTGRES_NON_ROOT_PASSWORD": "${N8N_DB_NON_ROOT_PASSWORD}"
-            },
-            "volumes": [
-                {
-                    "containerPath": "/var/lib/postgresql/data",
-                    "hostPath": "${APP_DATA_DIR}/data/db"
-                },
-                {
-                    "containerPath": "/docker-entrypoint-initdb.d/init-data.sh",
-                    "hostPath": "${APP_DATA_DIR}/data/init-data.sh"
-                }
-            ],
-            "healthCheck": {
-                "interval": "5s",
-                "timeout": "5s",
-                "retries": 10,
-                "test": "pg_isready -h localhost -U $${POSTGRES_USER} -d $${POSTGRES_DB}"
-            }
+          "key": "DB_POSTGRESDB_DATABASE",
+          "value": "n8n"
+        },
+        {
+          "key": "DB_POSTGRESDB_HOST",
+          "value": "n8n-db"
+        },
+        {
+          "key": "DB_POSTGRESDB_PORT",
+          "value": "5432"
+        },
+        {
+          "key": "DB_POSTGRESDB_USER",
+          "value": "n8n"
+        },
+        {
+          "key": "DB_POSTGRESDB_PASSWORD",
+          "value": "${N8N_DB_NON_ROOT_PASSWORD}"
         }
-    ],
-    "$schema": "../dynamic-compose-schema.json"
+      ],
+      "volumes": [
+        {
+          "containerPath": "/home/node/.n8n",
+          "hostPath": "${APP_DATA_DIR}/data/n8n"
+        }
+      ]
+    },
+    {
+      "name": "n8n-db",
+      "image": "postgres:16",
+      "environment": [
+        {
+          "key": "POSTGRES_DB",
+          "value": "n8n"
+        },
+        {
+          "key": "POSTGRES_USER",
+          "value": "root"
+        },
+        {
+          "key": "POSTGRES_PASSWORD",
+          "value": "${N8N_DB_PASSWORD}"
+        },
+        {
+          "key": "POSTGRES_NON_ROOT_USER",
+          "value": "n8n"
+        },
+        {
+          "key": "POSTGRES_NON_ROOT_PASSWORD",
+          "value": "${N8N_DB_NON_ROOT_PASSWORD}"
+        }
+      ],
+      "volumes": [
+        {
+          "containerPath": "/var/lib/postgresql/data",
+          "hostPath": "${APP_DATA_DIR}/data/db"
+        },
+        {
+          "containerPath": "/docker-entrypoint-initdb.d/init-data.sh",
+          "hostPath": "${APP_DATA_DIR}/data/init-data.sh"
+        }
+      ],
+      "healthCheck": {
+        "interval": "5s",
+        "timeout": "5s",
+        "retries": 10,
+        "test": "pg_isready -h localhost -U $${POSTGRES_USER} -d $${POSTGRES_DB}"
+      }
+    }
+  ],
+  "$schema": "https://schemas.runtipi.io/v2/dynamic-compose.json",
+  "schemaVersion": 2
 }

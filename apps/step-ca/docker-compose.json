@@ -1,27 +1,43 @@
 {
-    "$schema": "../dynamic-compose-schema.json",
-    "services": [
+  "$schema": "https://schemas.runtipi.io/v2/dynamic-compose.json",
+  "services": [
+    {
+      "name": "step-ca",
+      "image": "smallstep/step-ca:0.28.4",
+      "internalPort": "9000",
+      "isMain": true,
+      "environment": [
         {
-            "name": "step-ca",
-            "image": "smallstep/step-ca:0.28.4",
-            "internalPort": "9000",
-            "isMain": true,
-            "environment": {
-                "DOCKER_STEPCA_INIT_NAME": "${STEPCA_CA_NAME:-Smallstep}",
-                "DOCKER_STEPCA_INIT_DNS_NAMES": "${STEPCA_DNS_NAMES}",
-                "DOCKER_STEPCA_INIT_REMOTE_MANAGEMENT": "true",
-                "DOCKER_STEPCA_INIT_SSH": "true",
-                "DOCKER_STEPCA_INIT_ACME": "true"
-            },
-            "volumes": [
-                {
-                    "hostPath": "${APP_DATA_DIR}/data",
-                    "containerPath": "/home/step"
-                }
-            ],
-            "healthCheck": {
-                "test": "curl -k https://127.0.0.1:9000/health || exit 1"
-            }
+          "key": "DOCKER_STEPCA_INIT_NAME",
+          "value": "${STEPCA_CA_NAME:-Smallstep}"
+        },
+        {
+          "key": "DOCKER_STEPCA_INIT_DNS_NAMES",
+          "value": "${STEPCA_DNS_NAMES}"
+        },
+        {
+          "key": "DOCKER_STEPCA_INIT_REMOTE_MANAGEMENT",
+          "value": "true"
+        },
+        {
+          "key": "DOCKER_STEPCA_INIT_SSH",
+          "value": "true"
+        },
+        {
+          "key": "DOCKER_STEPCA_INIT_ACME",
+          "value": "true"
         }
-    ]
+      ],
+      "volumes": [
+        {
+          "hostPath": "${APP_DATA_DIR}/data",
+          "containerPath": "/home/step"
+        }
+      ],
+      "healthCheck": {
+        "test": "curl -k https://127.0.0.1:9000/health || exit 1"
+      }
+    }
+  ],
+  "schemaVersion": 2
 }

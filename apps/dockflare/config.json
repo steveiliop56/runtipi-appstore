@@ -5,19 +5,13 @@
   "short_desc": "Cloudflare Tunnel & Zero Trust manager.",
   "author": "ChrispyBacon-dev",
   "port": 8926,
-  "categories": [
-    "network",
-    "utilities"
-  ],
+  "categories": ["network", "utilities"],
   "description": "DockFlare simplifies Cloudflare Tunnel and Zero Trust Access policy management by using Docker labels for automated configuration, while also providing a powerful web UI for manual service definitions and policy overrides.",
-  "tipi_version": 10,
+  "tipi_version": 11,
   "version": "v1.9.5",
   "source": "https://github.com/ChrispyBacon-dev/DockFlare",
   "exposable": true,
-  "supported_architectures": [
-    "arm64",
-    "amd64"
-  ],
+  "supported_architectures": ["arm64", "amd64"],
   "created_at": 1748951010245,
   "updated_at": 1753661177516,
   "dynamic_config": true,
@@ -51,5 +45,5 @@
       "env_variable": "DOCKFLARE_TUNNEL_NAME"
     }
   ],
-  "$schema": "../app-info-schema.json"
+  "$schema": "https://schemas.runtipi.io/app-info.json"
 }
