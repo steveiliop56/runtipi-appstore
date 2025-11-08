@@ -5,7 +5,7 @@
     {
       "name": "ironmount",
       "image": "ghcr.io/nicotsx/ironmount:v0.5.0",
-      "internalPort": 4090,
+      "internalPort": 4096,
       "isMain": true,
       "privileged": true,
       "devices": ["/dev/fuse:/dev/fuse"],
