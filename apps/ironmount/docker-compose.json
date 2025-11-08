@@ -12,10 +12,7 @@
       "volumes": [
         {
           "containerPath": "/var/lib/ironmount",
-          "hostPath": "/var/lib/ironmount",
-          "bind": {
-            "propagation": "rshared"
-          }
+          "hostPath": "/var/lib/ironmount"
         },
         {
           "containerPath": "/host/proc",

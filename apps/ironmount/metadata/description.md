@@ -1,11 +1,9 @@
 # Ironmount
 
-Powerful backup automation for your remote storage.
-Encrypt, compress, and protect your data with ease
+**Powerful backup automation for your remote storage.**
+**Encrypt, compress, and protect your data with ease.**
 
 ![Preview](https://github.com/nicotsx/ironmount/blob/main/screenshots/volume-details.png?raw=true)
-
-> Warning ⚠️: Ironmount is still in version 0.x.x and is subject to major changes from version to version. I am developing the core features and collecting feedbacks. Expect bugs! Please open issues or feature requests
 
 ## Intro
 
