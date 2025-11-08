@@ -5,16 +5,21 @@
   "short_desc": "The open source Trello alternative.",
   "author": "kanbn",
   "port": 8274,
-  "categories": ["utilities"],
+  "categories": [
+    "utilities"
+  ],
   "description": "A powerful, flexible kanban app that helps you organise work, track progress, and deliver results-all in one place.",
-  "tipi_version": 13,
-  "version": "0.4.7",
+  "tipi_version": 14,
+  "version": "0.4.8",
   "source": "https://github.com/kanbn/kan",
   "website": "https://kan.bn",
   "exposable": true,
-  "supported_architectures": ["arm64", "amd64"],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
   "created_at": 1752274451465,
-  "updated_at": 1761350732331,
+  "updated_at": 1762610870721,
   "dynamic_config": true,
   "form_fields": [
     {
