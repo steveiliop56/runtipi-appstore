@@ -4,16 +4,21 @@
   "available": true,
   "short_desc": "VPN client in a thin Docker container.",
   "author": "qdm12",
-  "categories": ["network"],
+  "categories": [
+    "network"
+  ],
   "description": "VPN client in a thin Docker container for multiple VPN providers, written in Go, and using OpenVPN or Wireguard, DNS over TLS, with a few proxy servers built-in.",
-  "tipi_version": 6,
-  "version": "v3.40.0",
+  "tipi_version": 7,
+  "version": "v3.40.1",
   "source": "https://github.com/qdm12/gluetun",
   "exposable": false,
   "no_gui": true,
-  "supported_architectures": ["arm64", "amd64"],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
   "created_at": 1746294515742,
-  "updated_at": 1747744493372,
+  "updated_at": 1763251646066,
   "dynamic_config": true,
   "form_fields": [
     {
