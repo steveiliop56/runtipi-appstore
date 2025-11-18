@@ -9,8 +9,8 @@
     "utilities"
   ],
   "description": "Ironmount is a backup automation tool that helps you save your data across multiple storage backends.",
-  "tipi_version": 7,
-  "version": "v0.9.0",
+  "tipi_version": 8,
+  "version": "v0.11.0",
   "source": "https://github.com/nicotsx/ironmount",
   "exposable": true,
   "supported_architectures": [
@@ -18,7 +18,7 @@
     "amd64"
   ],
   "created_at": 1762611134916,
-  "updated_at": 1763216091536,
+  "updated_at": 1763424462681,
   "dynamic_config": true,
   "form_fields": [],
   "$schema": "https://schemas.runtipi.io/app-info.json"
