@@ -4,7 +4,7 @@
   "services": [
     {
       "name": "ironmount",
-      "image": "ghcr.io/nicotsx/ironmount:v0.9.0",
+      "image": "ghcr.io/nicotsx/ironmount:v0.11.0",
       "internalPort": 4096,
       "isMain": true,
       "capAdd": ["SYS_ADMIN"],
