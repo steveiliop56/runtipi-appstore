@@ -8,8 +8,8 @@
     "network"
   ],
   "description": "VPN client in a thin Docker container for multiple VPN providers, written in Go, and using OpenVPN or Wireguard, DNS over TLS, with a few proxy servers built-in.",
-  "tipi_version": 7,
-  "version": "v3.40.1",
+  "tipi_version": 8,
+  "version": "v3.40.3",
   "source": "https://github.com/qdm12/gluetun",
   "exposable": false,
   "no_gui": true,
@@ -18,7 +18,7 @@
     "amd64"
   ],
   "created_at": 1746294515742,
-  "updated_at": 1763251646066,
+  "updated_at": 1763510885292,
   "dynamic_config": true,
   "form_fields": [
     {
