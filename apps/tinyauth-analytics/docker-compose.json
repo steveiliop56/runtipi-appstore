@@ -1,0 +1,22 @@
+{
+  "$schema": "https://schemas.runtipi.io/v2/dynamic-compose.json",
+  "schemaVersion": 2,
+  "services": [
+    {
+      "name": "tinyauth-analytics",
+      "image": "ghcr.io/steveiliop56/tinyauth-analytics-dashboard:v0.3.0",
+      "internalPort": 8080,
+      "isMain": true,
+      "environment": [
+        {
+          "key": "API_SERVER",
+          "value": "${TINYAUTH_ANALYTICS_API_SERVER}"
+        },
+        {
+          "key": "REFRESH_INTERVAL",
+          "value": "${TINYAUTH_ANALYTICS_REFRESH_INTERVAL}"
+        }
+      ]
+    }
+  ]
+}

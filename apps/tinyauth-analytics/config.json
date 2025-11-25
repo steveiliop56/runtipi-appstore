@@ -1,0 +1,35 @@
+{
+  "name": "Tinyauth Analytics",
+  "id": "tinyauth-analytics",
+  "available": true,
+  "short_desc": "Tinyauth Analytics Dashboard.",
+  "author": "steveiliop56",
+  "port": 8747,
+  "categories": ["utilities"],
+  "description": "A simple server that periodically fetches data from the analytics server API and displays them in a simple dashboard.",
+  "tipi_version": 1,
+  "version": "v0.3.0",
+  "source": "https://github.com/steveiliop56/tinyauth-analytics",
+  "exposable": true,
+  "supported_architectures": ["arm64", "amd64"],
+  "created_at": 1764076646562,
+  "updated_at": 1764076646562,
+  "dynamic_config": true,
+  "form_fields": [
+    {
+      "type": "url",
+      "label": "API Server URL",
+      "required": true,
+      "placeholder": "https://api.tinyauth.app",
+      "env_variable": "TINYAUTH_ANALYTICS_API_SERVER"
+    },
+    {
+      "type": "number",
+      "label": "Refresh Interval",
+      "required": true,
+      "placeholder": "60",
+      "env_variable": "TINYAUTH_ANALYTICS_REFRESH_INTERVAL"
+    }
+  ],
+  "$schema": "https://schemas.runtipi.io/app-info.json"
+}
