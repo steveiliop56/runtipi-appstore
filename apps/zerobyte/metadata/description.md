@@ -4,6 +4,8 @@ Powerful backup automation for your remote storage. Encrypt, compress, and prote
 
 ![Preview](https://github.com/nicotsx/zerobyte/blob/main/screenshots/backup-details.webp?raw=true)
 
+> Warning ⚠️: Before installing, make sure to create the data directory with `mkdir -p /var/lib/zerobyte`.
+
 ## Intro
 
 Zerobyte is a backup automation tool that helps you save your data across multiple storage backends. Built on top of Restic, it provides an modern web interface to schedule, manage, and monitor encrypted backups of your remote storage.
