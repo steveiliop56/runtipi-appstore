@@ -1,0 +1,42 @@
+{
+  "$schema": "https://schemas.runtipi.io/v2/dynamic-compose.json",
+  "schemaVersion": 2,
+  "services": [
+    {
+      "name": "zerobyte",
+      "image": "ghcr.io/nicotsx/zerobyte:v0.13.3",
+      "internalPort": 4096,
+      "isMain": true,
+      "capAdd": ["SYS_ADMIN"],
+      "devices": ["/dev/fuse:/dev/fuse"],
+      "environment": [
+        {
+          "key": "TZ",
+          "value": "${TZ}"
+        }
+      ],
+      "volumes": [
+        {
+          "containerPath": "/var/lib/zerobyte",
+          "hostPath": "/var/lib/zerobyte",
+          "bind": {
+            "propagation": "rshared"
+          }
+        },
+        {
+          "containerPath": "/run/docker/plugins",
+          "hostPath": "/run/docker/plugins"
+        },
+        {
+          "containerPath": "/var/run/docker.sock",
+          "hostPath": "/var/run/docker.sock"
+        },
+        {
+          "containerPath": "/etc/localtime",
+          "hostPath": "/etc/localtime",
+          "readOnly": true
+        }
+      ]
+    }
+  ]
+}
