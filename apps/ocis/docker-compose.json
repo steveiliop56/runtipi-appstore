@@ -6,10 +6,16 @@
       "image": "owncloud/ocis:7.3.1",
       "isMain": true,
       "internalPort": 9200,
+      "entrypoint": ["/bin/sh"],
+      "command": ["-c", "ocis init || true; exec ocis server"],
       "environment": [
         {
           "key": "OCIS_INSECURE",
           "value": "true"
+        },
+        {
+          "key": "PROXY_TLS",
+          "value": "false"
         },
         {
           "key": "OCIS_URL",
@@ -18,22 +24,22 @@
         {
           "key": "OCIS_LOG_LEVEL",
           "value": "info"
+        },
+        {
+          "key": "IDM_ADMIN_PASSWORD",
+          "value": "${OCIS_IDM_ADMIN_PASSWORD}"
         }
       ],
       "volumes": [
         {
-          "hostPath": "${APP_DATA_DIR}/data/config/ocis.yaml",
-          "containerPath": "/etc/ocis/ocis.yaml"
+          "hostPath": "${APP_DATA_DIR}/data/config",
+          "containerPath": "/etc/ocis"
         },
         {
           "hostPath": "${APP_DATA_DIR}/data/ocis",
           "containerPath": "/var/lib/ocis"
         }
-      ],
-      "extraLabels": {
-        "traefik.http.services.{{RUNTIPI_APP_ID}}.loadbalancer.server.scheme": "https",
-        "traefik.http.services.{{RUNTIPI_APP_ID}}.loadbalancer.serverstransport": "insecuretransport@file"
-      }
+      ]
     }
   ],
   "schemaVersion": 2

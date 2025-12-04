@@ -1,7 +1,6 @@
 # ownCloud Infinite Scale
 
 - [ownCloud Infinite Scale](#owncloud-infinite-scale)
-  - [After installation](#after-installation)
   - [Introduction](#introduction)
   - [Overview](#overview)
     - [Clients](#clients)
@@ -14,28 +13,6 @@
   - [Documentation](#documentation)
     - [Admin Documentation](#admin-documentation)
     - [Development Documentation](#development-documentation)
-
-## After installation
-
-After installing the app you should run:
-
-```bash
-docker exec -it ocis_steveiliop56-ocis-1 ocis init --force-overwrite --insecure yes
-```
-
-Then remove the old data:
-
-```bash
-rm -rf runtipi/app-data/steveiliop56/ocis/data/ocis
-```
-
-Recreate the data directory (use a non-root account):
-
-```bash
-mkdir -p runtipi/app-data/steveiliop56/ocis/data/ocis
-```
-
-Finally restart the app and you should be good to go.
 
 ## Introduction
 
