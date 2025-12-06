@@ -3,7 +3,7 @@
   "services": [
     {
       "name": "step-ca",
-      "image": "smallstep/step-ca:0.28.4",
+      "image": "smallstep/step-ca:0.29.0",
       "internalPort": "9000",
       "isMain": true,
       "environment": [
