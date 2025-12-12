@@ -3,7 +3,7 @@
   "services": [
     {
       "name": "newt",
-      "image": "fosrl/newt:1.6.1",
+      "image": "fosrl/newt:1.7.0",
       "environment": [
         {
           "key": "PANGOLIN_ENDPOINT",
