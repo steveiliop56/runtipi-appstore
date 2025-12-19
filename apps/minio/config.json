@@ -1,7 +1,8 @@
 {
   "name": "Minio",
   "id": "minio",
-  "available": true,
+  "available": false,
+  "deprecated": true,
   "short_desc": "High performance, S3 compatible object store.",
   "author": "minio",
   "port": 8922,
@@ -14,7 +15,7 @@
   "exposable": true,
   "supported_architectures": ["arm64", "amd64"],
   "created_at": 1750969832202,
-  "updated_at": 1751012077882,
+  "updated_at": 1766169865980,
   "dynamic_config": true,
   "form_fields": [
     {
