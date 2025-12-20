@@ -1,0 +1,40 @@
+{
+  "name": "Ryot",
+  "id": "ryot",
+  "available": true,
+  "short_desc": "Roll your own tracker!",
+  "author": "ignisda",
+  "port": 8736,
+  "categories": ["utilities"],
+  "description": "A self hosted platform for tracking various facets of your life - media, fitness etc.",
+  "tipi_version": 1,
+  "version": "v9.6.0",
+  "source": "https://github.com/ignisda/ryot",
+  "website": "https://ryot.io",
+  "exposable": true,
+  "supported_architectures": ["arm64", "amd64"],
+  "created_at": 1766256676500,
+  "updated_at": 1766256676500,
+  "dynamic_config": true,
+  "form_fields": [
+    {
+      "type": "url",
+      "label": "Frontend URL",
+      "required": true,
+      "env_variable": "RYOT_FRONTEND_URL"
+    },
+    {
+      "type": "random",
+      "label": "Database Password",
+      "min": 32,
+      "env_variable": "RYOT_DB_PASSWORD"
+    },
+    {
+      "type": "random",
+      "label": "Admin Access Token",
+      "min": 32,
+      "env_variable": "RYOT_ADMIN_ACCESS_TOKEN"
+    }
+  ],
+  "$schema": "https://schemas.runtipi.io/app-info.json"
+}
