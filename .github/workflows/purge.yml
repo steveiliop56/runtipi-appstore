@@ -1,0 +1,36 @@
+name: Purge Deprecated Apps
+
+on:
+  schedule:
+    - cron: 0 0 1 * *
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/create-github-app-token@v2
+        id: app-token
+        with:
+          app-id: ${{ vars.APP_ID }}
+          private-key: ${{ secrets.PRIVATE_KEY }}
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: Delete deprecated apps
+        run: bun .github/scripts/purge-deprecated.ts
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v8
+        with:
+          token: ${{ steps.app-token.outputs.token }}
+          commit-message: "chore: remove deprecated apps"
+          title: "chore: remove deprecated apps"
+          body: "This PR removes deprecated apps from the repository."
+          committer: "runtipi-update-bot[bot] <214552316+runtipi-update-bot[bot]@users.noreply.github.com>"
+          author: "runtipi-update-bot[bot] <214552316+runtipi-update-bot[bot]@users.noreply.github.com>"
