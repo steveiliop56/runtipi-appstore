@@ -5,16 +5,21 @@
   "short_desc": "Roll your own tracker!",
   "author": "ignisda",
   "port": 8736,
-  "categories": ["utilities"],
+  "categories": [
+    "utilities"
+  ],
   "description": "A self hosted platform for tracking various facets of your life - media, fitness etc.",
-  "tipi_version": 1,
-  "version": "v9.6.0",
+  "tipi_version": 2,
+  "version": "v9.6.2",
   "source": "https://github.com/ignisda/ryot",
   "website": "https://ryot.io",
   "exposable": true,
-  "supported_architectures": ["arm64", "amd64"],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
   "created_at": 1766256676500,
-  "updated_at": 1766256676500,
+  "updated_at": 1766362046439,
   "dynamic_config": true,
   "form_fields": [
     {
