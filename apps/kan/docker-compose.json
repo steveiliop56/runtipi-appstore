@@ -2,7 +2,7 @@
   "$schema": "https://schemas.runtipi.io/v2/dynamic-compose.json",
   "services": [
     {
-      "image": "ghcr.io/kanbn/kan:0.5.1",
+      "image": "ghcr.io/kanbn/kan:0.5.2",
       "name": "kan",
       "internalPort": 3000,
       "isMain": true,
