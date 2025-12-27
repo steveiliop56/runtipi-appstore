@@ -5,15 +5,20 @@
   "short_desc": "Tinyauth Analytics Dashboard.",
   "author": "steveiliop56",
   "port": 8747,
-  "categories": ["utilities"],
+  "categories": [
+    "utilities"
+  ],
   "description": "A simple server that periodically fetches data from the analytics server API and displays them in a simple dashboard.",
-  "tipi_version": 1,
-  "version": "v0.3.0",
+  "tipi_version": 2,
+  "version": "v1.0.0",
   "source": "https://github.com/steveiliop56/tinyauth-analytics",
   "exposable": true,
-  "supported_architectures": ["arm64", "amd64"],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
   "created_at": 1764076646562,
-  "updated_at": 1764076646562,
+  "updated_at": 1766794055572,
   "dynamic_config": true,
   "form_fields": [
     {
