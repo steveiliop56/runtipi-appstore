@@ -5,16 +5,21 @@
   "short_desc": "A minimalist, self-hosted WakaTime-compatible backend for coding statistics.",
   "author": "muety",
   "port": 8382,
-  "categories": ["development"],
+  "categories": [
+    "development"
+  ],
   "description": "Wakapi is an open-source tool that helps you keep track of the time you have spent coding on different projects in different programming languages and more. Ideal for statistics freaks and anyone else.",
-  "tipi_version": 1,
-  "version": "2.16.1",
+  "tipi_version": 2,
+  "version": "2.17.0",
   "source": "https://github.com/muety/wakapi",
   "website": "https://wakapi.dev",
   "exposable": true,
-  "supported_architectures": ["arm64", "amd64"],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
   "created_at": 1766169865980,
-  "updated_at": 1766169865980,
+  "updated_at": 1767053228500,
   "dynamic_config": true,
   "form_fields": [
     {
