@@ -4,7 +4,7 @@
   "services": [
     {
       "name": "tinyauth-analytics",
-      "image": "ghcr.io/steveiliop56/tinyauth-analytics-dashboard:v0.3.0",
+      "image": "ghcr.io/steveiliop56/tinyauth-analytics-dashboard:v1.0.0",
       "internalPort": 8080,
       "isMain": true,
       "environment": [
