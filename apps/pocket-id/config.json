@@ -5,21 +5,16 @@
   "short_desc": "A simple and easy-to-use OIDC provider.",
   "author": "pocket-id",
   "port": 8387,
-  "categories": [
-    "security"
-  ],
+  "categories": ["security"],
   "description": "Pocket ID is a simple OIDC provider that allows users to authenticate with their passkeys to your services.",
-  "tipi_version": 24,
-  "version": "v1.16.0",
+  "tipi_version": 25,
+  "version": "v2.2.0",
   "source": "https://github.com/pocket-id/pocket-id",
   "website": "https://pocket-id.org",
   "exposable": true,
-  "supported_architectures": [
-    "arm64",
-    "amd64"
-  ],
+  "supported_architectures": ["arm64", "amd64"],
   "created_at": 1746731782218,
-  "updated_at": 1764547617323,
+  "updated_at": 1768336059791,
   "dynamic_config": true,
   "form_fields": [
     {
@@ -28,6 +23,12 @@
       "placeholder": "https://pocket-id.example.com",
       "required": true,
       "env_variable": "POCKET_ID_APP_URL"
+    },
+    {
+      "type": "random",
+      "label": "Pocket ID Encryption Key",
+      "min": 32,
+      "env_variable": "POCKET_ID_ENCRYPTION_KEY"
     }
   ],
   "$schema": "https://schemas.runtipi.io/app-info.json"
