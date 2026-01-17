@@ -2,7 +2,7 @@
   "services": [
     {
       "name": "n8n",
-      "image": "ghcr.io/n8n-io/n8n:1.123.14",
+      "image": "ghcr.io/n8n-io/n8n:1.123.16",
       "isMain": true,
       "internalPort": "5678",
       "environment": [
