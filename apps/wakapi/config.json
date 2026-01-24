@@ -9,8 +9,8 @@
     "development"
   ],
   "description": "Wakapi is an open-source tool that helps you keep track of the time you have spent coding on different projects in different programming languages and more. Ideal for statistics freaks and anyone else.",
-  "tipi_version": 2,
-  "version": "2.17.0",
+  "tipi_version": 3,
+  "version": "2.17.1",
   "source": "https://github.com/muety/wakapi",
   "website": "https://wakapi.dev",
   "exposable": true,
@@ -19,7 +19,7 @@
     "amd64"
   ],
   "created_at": 1766169865980,
-  "updated_at": 1767053228500,
+  "updated_at": 1769213431729,
   "dynamic_config": true,
   "form_fields": [
     {
