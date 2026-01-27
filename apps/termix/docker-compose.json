@@ -4,7 +4,7 @@
   "services": [
     {
       "name": "termix",
-      "image": "ghcr.io/lukegus/termix:release-1.8.0",
+      "image": "ghcr.io/lukegus/termix:release-1.11.0",
       "isMain": true,
       "internalPort": 8080,
       "volumes": [
