@@ -9,8 +9,8 @@
     "development"
   ],
   "description": "Coder enables organizations to set up development environments in their public or private cloud infrastructure.",
-  "tipi_version": 23,
-  "version": "v2.29.3",
+  "tipi_version": 24,
+  "version": "v2.29.4",
   "source": "https://github.com/coder/coder",
   "website": "https://coder.com",
   "exposable": true,
@@ -19,7 +19,7 @@
     "amd64"
   ],
   "created_at": 1746477403489,
-  "updated_at": 1769558840140,
+  "updated_at": 1769731726334,
   "dynamic_config": true,
   "form_fields": [
     {
