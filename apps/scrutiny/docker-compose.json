@@ -3,7 +3,7 @@
   "services": [
     {
       "name": "scrutiny",
-      "image": "ghcr.io/analogj/scrutiny:v0.8.1-omnibus",
+      "image": "ghcr.io/analogj/scrutiny:v0.8.2-omnibus",
       "internalPort": 8080,
       "isMain": true,
       "capAdd": ["SYS_RAWIO", "SYS_ADMIN"],
