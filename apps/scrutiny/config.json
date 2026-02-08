@@ -5,15 +5,20 @@
   "short_desc": "Hard Drive S.M.A.R.T Monitoring.",
   "author": "AnalogJ",
   "port": 8028,
-  "categories": ["utilities"],
+  "categories": [
+    "utilities"
+  ],
   "description": "Hard Drive S.M.A.R.T Monitoring, Historical Trends & Real World Failure Thresholds.",
-  "tipi_version": 4,
-  "version": "v0.8.1-omnibus",
+  "tipi_version": 5,
+  "version": "v0.8.2",
   "source": "https://github.com/AnalogJ/scrutiny",
   "exposable": true,
-  "supported_architectures": ["arm64", "amd64"],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
   "created_at": 1746960575012,
-  "updated_at": 1746961696617,
+  "updated_at": 1770509578952,
   "dynamic_config": true,
   "form_fields": [],
   "$schema": "https://schemas.runtipi.io/app-info.json"
