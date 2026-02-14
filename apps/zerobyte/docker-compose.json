@@ -4,7 +4,7 @@
   "services": [
     {
       "name": "zerobyte",
-      "image": "ghcr.io/nicotsx/zerobyte:v0.25.1",
+      "image": "ghcr.io/nicotsx/zerobyte:v0.27.0",
       "internalPort": 4096,
       "isMain": true,
       "capAdd": ["SYS_ADMIN"],
