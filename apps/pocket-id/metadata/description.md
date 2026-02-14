@@ -1,6 +1,6 @@
 # Pocket ID
 
-> On the first install you will have to append `/login/setup` in the Pocket ID URL in order to setup the admin account.
+> On the first install you will have to replace `/login` with `/setup` in the Pocket ID URL in order to setup the admin account.
 
 Pocket ID is a simple OIDC provider that allows users to authenticate with their passkeys to your services.
 
