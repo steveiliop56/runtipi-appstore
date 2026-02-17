@@ -12,8 +12,12 @@
           "value": "/sentinel/data/config.yml"
         },
         {
+          "key": "SENTINEL_STATE_PATH",
+          "value": "/sentinel/data/state.json"
+        },
+        {
           "key": "SENTINEL_TSNET_STATE_DIR",
-          "value": "/sentinel/data/state"
+          "value": "/sentinel/data/tsnet"
         }
       ],
       "volumes": [
