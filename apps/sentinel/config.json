@@ -7,7 +7,7 @@
   "port": 9999,
   "categories": ["network", "utilities"],
   "description": "Sentinel is a tsnet-embedded Tailscale observer. It tracks tailnet netmap changes, detects meaningful diffs, and sends notifications through configurable sinks.",
-  "tipi_version": 2,
+  "tipi_version": 3,
   "version": "0.0.3",
   "source": "https://github.com/jaxxstorm/sentinel",
   "website": "https://jaxxstorm.github.io/sentinel/#",
@@ -15,7 +15,7 @@
   "no_gui": true,
   "supported_architectures": ["arm64", "amd64"],
   "created_at": 1771361756893,
-  "updated_at": 771362589417,
+  "updated_at": 1771362783504,
   "dynamic_config": true,
   "form_fields": [],
   "$schema": "https://schemas.runtipi.io/app-info.json"

@@ -17,7 +17,7 @@
         },
         {
           "key": "SENTINEL_TSNET_STATE_DIR",
-          "value": "/sentinel/data/tsnet"
+          "value": "/sentinel/data"
         }
       ],
       "volumes": [
