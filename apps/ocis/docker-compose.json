@@ -3,7 +3,7 @@
   "services": [
     {
       "name": "ocis",
-      "image": "owncloud/ocis:7.3.2",
+      "image": "owncloud/ocis:8.0.0",
       "isMain": true,
       "internalPort": 9200,
       "entrypoint": ["/bin/sh"],
