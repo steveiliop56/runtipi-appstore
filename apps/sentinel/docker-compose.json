@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.runtipi.io/v2/dynamic-compose.json",
+  "schemaVersion": 2,
+  "services": [
+    {
+      "name": "sentinel",
+      "image": "ghcr.io/jaxxstorm/sentinel:0.0.3",
+      "isMain": true,
+      "environment": [
+        {
+          "key": "SENTINEL_CONFIG_PATH",
+          "value": "/sentinel/data/config.yml"
+        },
+        {
+          "key": "SENTINEL_TSNET_STATE_DIR",
+          "value": "/sentinel/data/state"
+        }
+      ],
+      "volumes": [
+        {
+          "hostPath": "${APP_DATA_DIR}/data",
+          "containerPath": "/sentinel/data"
+        }
+      ]
+    }
+  ]
+}

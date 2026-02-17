@@ -1,0 +1,117 @@
+# Sentinel example configuration for local testing.
+# Usage:
+#   go run ./cmd/sentinel run --config ./config.example.yaml
+#
+# Optional env vars:
+#   export SLACK_WEBHOOK_URL="https://hooks.slack.com/services/..."
+#   export SENTINEL_DISCORD_WEBHOOK_URL="https://discord.com/api/webhooks/..."
+#   export SENTINEL_TAILSCALE_AUTH_KEY="tskey-..."
+#   export SENTINEL_TSNET_ADVERTISE_TAGS='["tag:sentinel"]'
+#   export SENTINEL_TSNET_CLIENT_SECRET="oauth-client-secret"
+#   export SENTINEL_TSNET_CLIENT_ID="oauth-client-id"
+
+poll_interval: 10s
+poll_jitter: 1s
+poll_backoff_min: 500ms
+poll_backoff_max: 30s
+
+source:
+  # realtime | poll
+  # realtime (default): subscribe to Tailscale IPNBus updates.
+  # poll: compatibility mode using periodic status fetches.
+  mode: realtime
+
+detectors:
+  presence:
+    enabled: true
+  peer_changes:
+    enabled: true
+  runtime:
+    enabled: true
+
+detector_order:
+  - presence
+  - peer_changes
+  - runtime
+
+policy:
+  debounce_window: 3s
+  suppression_window: 0s
+  rate_limit_per_min: 120
+  batch_size: 20
+
+notifier:
+  idempotency_key_ttl: 24h
+  sinks:
+    # Always-on local JSON output sink.
+    # Emits machine-readable notification lines with:
+    #   log_source: sink
+    #   sink: <sink name>
+    #   event: {...}
+    #   idempotency_key: ...
+    - name: stdout-debug
+      type: stdout
+
+    # # Optional webhook sink. If URL is empty or placeholder, it is skipped.
+    # - name: webhook-primary
+    #   type: webhook
+    #   url: ${SENTINEL_WEBHOOK_URL}
+
+    # Optional Discord sink. Requires a valid webhook URL.
+    - name: discord-primary
+      type: discord
+      url: ${SENTINEL_DISCORD_WEBHOOK_URL}
+
+  routes:
+    # Use "*" to match all emitted event types.
+    - event_types: ["*"]
+      severities: []
+      device:
+        # Optional selectors. Omit `device` to match all devices.
+        names: ["sentinel"]
+        tags: ["tag:dev"]
+        owners: ["123"]
+        ips: ["100.64.0.10"]
+      sinks: ["stdout-debug", "discord-primary"]
+      # sinks: ["stdout-debug", "webhook-primary", "discord-primary"]
+
+    # Example explicit route:
+    # - event_types: ["peer.online", "peer.offline", "peer.routes.changed", "daemon.state.changed"]
+    #   severities: []
+    #   device:
+    #     names: ["laptop-01"]
+    #     tags: ["tag:prod"]
+    #     owners: ["456"]
+    #     ips: ["100.64.0.25"]
+    #   sinks: ["stdout-debug"]
+
+state:
+  path: .sentinel/state.json
+  idempotency_key_ttl: 24h
+
+output:
+  # pretty | json
+  # Runtime records include a stable log_source field:
+  # sentinel | tailscale | sink
+  log_format: pretty
+  log_level: info
+  no_color: false
+
+tsnet:
+  hostname: sentinel
+  state_dir: .sentinel/tsnet
+  # Optional ACL tags to request during onboarding.
+  advertise_tags:
+    - tag:sentinel
+  # auto | auth_key | oauth | interactive
+  login_mode: auto
+  # Leave empty to use SENTINEL_TAILSCALE_AUTH_KEY env var.
+  auth_key: ""
+  # OAuth client credentials (used when auth key is not set or login_mode=oauth).
+  # client_secret requires client_id.
+  client_secret: ""
+  client_id: ""
+  id_token: ""
+  audience: ""
+  allow_interactive_fallback: true
+  login_timeout: 5m
