@@ -3,7 +3,7 @@
   "services": [
     {
       "name": "dockflare",
-      "image": "alplat/dockflare:v1.9.5",
+      "image": "alplat/dockflare:v3.0.6",
       "internalPort": 5000,
       "isMain": true,
       "environment": [
