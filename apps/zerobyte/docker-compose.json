@@ -13,6 +13,14 @@
         {
           "key": "TZ",
           "value": "${TZ}"
+        },
+        {
+          "key": "BASE_URL",
+          "value": "${ZEROBYTE_BASE_URL}"
+        },
+        {
+          "key": "APP_SECRET",
+          "value": "${ZEROBYTE_APP_SECRET}"
         }
       ],
       "volumes": [
@@ -22,14 +30,6 @@
           "bind": {
             "propagation": "rshared"
           }
-        },
-        {
-          "containerPath": "/run/docker/plugins",
-          "hostPath": "/run/docker/plugins"
-        },
-        {
-          "containerPath": "/var/run/docker.sock",
-          "hostPath": "/var/run/docker.sock"
         },
         {
           "containerPath": "/etc/localtime",
