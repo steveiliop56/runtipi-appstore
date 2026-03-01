@@ -9,8 +9,8 @@
     "utilities"
   ],
   "description": "A self hosted platform for tracking various facets of your life - media, fitness etc.",
-  "tipi_version": 7,
-  "version": "v10.3.2",
+  "tipi_version": 8,
+  "version": "v10.3.3",
   "source": "https://github.com/ignisda/ryot",
   "website": "https://ryot.io",
   "exposable": true,
@@ -19,7 +19,7 @@
     "amd64"
   ],
   "created_at": 1766256676500,
-  "updated_at": 1771632573662,
+  "updated_at": 1772323902633,
   "dynamic_config": true,
   "form_fields": [
     {
