@@ -9,8 +9,8 @@
     "data"
   ],
   "description": "ownCloud Infinite Scale (oCIS) is the new file sync & share platform that will be the foundation of your data management platform.",
-  "tipi_version": 10,
-  "version": "7.3.2",
+  "tipi_version": 11,
+  "version": "8.0.0",
   "source": "https://github.com/owncloud/ocis",
   "website": "https://doc.owncloud.com/ocis/next",
   "exposable": true,
@@ -20,7 +20,7 @@
     "amd64"
   ],
   "created_at": 1750267678825,
-  "updated_at": 1770336475909,
+  "updated_at": 1771287057906,
   "dynamic_config": true,
   "form_fields": [
     {
