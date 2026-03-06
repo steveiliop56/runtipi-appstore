@@ -3,7 +3,7 @@
   "services": [
     {
       "name": "nextcloud",
-      "image": "nextcloud:31.0.14",
+      "image": "nextcloud:33.0.0",
       "internalPort": 80,
       "isMain": true,
       "volumes": [
