@@ -1,8 +1,12 @@
 import { expect, test, describe } from "bun:test";
-import { appInfoSchema, dynamicComposeSchema } from "@runtipi/common/schemas";
-import { fromError } from "zod-validation-error";
+import {
+  appInfoSchema,
+  dynamicComposeSchema,
+  dynamicComposeSchemaYaml,
+} from "@runtipi/common/schemas";
 import fs from "node:fs";
 import path from "node:path";
+import { type } from "arktype";
 import YAML from "yaml";
 
 const ignoreFiles = ["docker-compose.common.yml"];
@@ -43,7 +47,7 @@ describe("each app should have the required files", async () => {
   }
 });
 
-describe("each app should have either a yaml or json compose file", async () => {
+describe("each app should have either a docker-compose.yml or docker-compose.json compose file", async () => {
   const apps = await getApps();
 
   for (const app of apps) {
@@ -58,7 +62,7 @@ describe("each app should have either a yaml or json compose file", async () => 
       }
     }
 
-    test(`app ${app} should have either a yaml or json compose file`, async () => {
+    test(`app ${app} should have either a docker-compose.yml or docker-compose.json compose file`, async () => {
       expect(hasComposeFile).toBe(true);
     });
   }
@@ -70,19 +74,16 @@ describe("each app should have a valid config.json", async () => {
   for (const app of apps) {
     test(`app ${app} should have a valid config.json`, async () => {
       const fileContent = await getFile(app, "config.json");
-      const parsed = appInfoSchema
-        .omit({ urn: true })
-        .safeParse(JSON.parse(fileContent || "{}"));
+      const result = appInfoSchema.omit("urn")(JSON.parse(fileContent || "{}"));
 
-      if (!parsed.success) {
-        const validationError = fromError(parsed.error);
+      if (!(result instanceof type.errors)) {
         console.error(
           `Error parsing config.json for app ${app}:`,
-          validationError.toString(),
+          result.toString(),
         );
       }
 
-      expect(parsed.success).toBe(true);
+      expect(!(result instanceof type.errors)).toBe(true);
     });
   }
 });
@@ -94,19 +95,16 @@ describe("each app should have a valid docker-compose.json", async () => {
     test(`app ${app} should have a valid docker-compose.json`, async () => {
       const fileContent = await getFile(app, "docker-compose.json");
       if (!fileContent) return;
-      const parsed = dynamicComposeSchema.safeParse(
-        JSON.parse(fileContent || "{}"),
-      );
+      const result = dynamicComposeSchema(JSON.parse(fileContent || "{}"));
 
-      if (!parsed.success) {
-        const validationError = fromError(parsed.error);
+      if (result instanceof type.errors) {
         console.error(
           `Error parsing docker-compose.json for app ${app}:`,
-          validationError.toString(),
+          result.toString(),
         );
       }
 
-      expect(parsed.success).toBe(true);
+      expect(!(result instanceof type.errors)).toBe(true);
     });
   }
 });
@@ -118,17 +116,16 @@ describe("each app should have a valid docker-compose.yml", async () => {
     test(`app ${app} should have a valid docker-compose.yml`, async () => {
       const fileContent = await getFile(app, "docker-compose.yml");
       if (!fileContent) return;
-      const parsed = dynamicComposeSchema.safeParse(YAML.parse(fileContent));
+      const result = dynamicComposeSchemaYaml(YAML.parse(fileContent || "{}"));
 
-      if (!parsed.success) {
-        const validationError = fromError(parsed.error);
+      if (result instanceof type.errors) {
         console.error(
-          `Error parsing docker-compose.yaml for app ${app}:`,
-          validationError.toString(),
+          `Error parsing docker-compose.yml for app ${app}:`,
+          result.toString(),
         );
       }
 
-      expect(parsed.success).toBe(true);
+      expect(!(result instanceof type.errors)).toBe(true);
     });
   }
 });

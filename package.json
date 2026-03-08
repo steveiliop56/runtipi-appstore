@@ -1,8 +1,8 @@
 {
   "dependencies": {
-    "@runtipi/common": "^1.0.1",
+    "@runtipi/common": "^1.1.3",
+    "arktype": "^2.2.0",
     "bun": "^1.2.10",
-    "zod-validation-error": "^5.0.0",
     "yaml": "^2.8.2"
   },
   "devDependencies": {
