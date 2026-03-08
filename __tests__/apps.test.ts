@@ -47,7 +47,7 @@ describe("each app should have either a yaml or json compose file", async () => 
   const apps = await getApps();
 
   for (const app of apps) {
-    const composeFiles = ["docker-compose.yaml", "docker-compose.json"];
+    const composeFiles = ["docker-compose.yml", "docker-compose.json"];
     let hasComposeFile = false;
 
     for (const file of composeFiles) {
@@ -111,12 +111,12 @@ describe("each app should have a valid docker-compose.json", async () => {
   }
 });
 
-describe("each app should have a valid docker-compose.yaml", async () => {
+describe("each app should have a valid docker-compose.yml", async () => {
   const apps = await getApps();
 
   for (const app of apps) {
-    test(`app ${app} should have a valid docker-compose.yaml`, async () => {
-      const fileContent = await getFile(app, "docker-compose.yaml");
+    test(`app ${app} should have a valid docker-compose.yml`, async () => {
+      const fileContent = await getFile(app, "docker-compose.yml");
       if (!fileContent) return;
       const parsed = dynamicComposeSchema.safeParse(YAML.parse(fileContent));
 
