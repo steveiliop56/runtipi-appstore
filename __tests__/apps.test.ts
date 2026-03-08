@@ -3,6 +3,7 @@ import { appInfoSchema, dynamicComposeSchema } from "@runtipi/common/schemas";
 import { fromError } from "zod-validation-error";
 import fs from "node:fs";
 import path from "node:path";
+import YAML from "yaml";
 
 const ignoreFiles = ["docker-compose.common.yml"];
 
@@ -29,7 +30,6 @@ describe("each app should have the required files", async () => {
   for (const app of apps) {
     const files = [
       "config.json",
-      "docker-compose.json",
       "metadata/logo.jpg",
       "metadata/description.md",
     ];
@@ -40,6 +40,27 @@ describe("each app should have the required files", async () => {
         expect(fileContent).not.toBeNull();
       });
     }
+  }
+});
+
+describe("each app should have either a yaml or json compose file", async () => {
+  const apps = await getApps();
+
+  for (const app of apps) {
+    const composeFiles = ["docker-compose.yaml", "docker-compose.json"];
+    let hasComposeFile = false;
+
+    for (const file of composeFiles) {
+      const fileContent = await getFile(app, file);
+      if (fileContent) {
+        hasComposeFile = true;
+        break;
+      }
+    }
+
+    test(`app ${app} should have either a yaml or json compose file`, async () => {
+      expect(hasComposeFile).toBe(true);
+    });
   }
 });
 
@@ -72,6 +93,7 @@ describe("each app should have a valid docker-compose.json", async () => {
   for (const app of apps) {
     test(`app ${app} should have a valid docker-compose.json`, async () => {
       const fileContent = await getFile(app, "docker-compose.json");
+      if (!fileContent) return;
       const parsed = dynamicComposeSchema.safeParse(
         JSON.parse(fileContent || "{}"),
       );
@@ -80,6 +102,28 @@ describe("each app should have a valid docker-compose.json", async () => {
         const validationError = fromError(parsed.error);
         console.error(
           `Error parsing docker-compose.json for app ${app}:`,
+          validationError.toString(),
+        );
+      }
+
+      expect(parsed.success).toBe(true);
+    });
+  }
+});
+
+describe("each app should have a valid docker-compose.yaml", async () => {
+  const apps = await getApps();
+
+  for (const app of apps) {
+    test(`app ${app} should have a valid docker-compose.yaml`, async () => {
+      const fileContent = await getFile(app, "docker-compose.yaml");
+      if (!fileContent) return;
+      const parsed = dynamicComposeSchema.safeParse(YAML.parse(fileContent));
+
+      if (!parsed.success) {
+        const validationError = fromError(parsed.error);
+        console.error(
+          `Error parsing docker-compose.yaml for app ${app}:`,
           validationError.toString(),
         );
       }

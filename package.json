@@ -2,7 +2,8 @@
   "dependencies": {
     "@runtipi/common": "^1.0.1",
     "bun": "^1.2.10",
-    "zod-validation-error": "^5.0.0"
+    "zod-validation-error": "^5.0.0",
+    "yaml": "^2.8.2"
   },
   "devDependencies": {
     "@types/bun": "^1.2.10",
