@@ -1,0 +1,13 @@
+x-runtipi:
+  schema_version: 2
+
+services:
+  gatus:
+    image: ghcr.io/twin/gatus:v5.35.0
+    ports:
+      - ${APP_PORT}:8080
+    volumes:
+      - ${APP_DATA_DIR}/data/config.yaml:/config/config.yaml
+    x-runtipi:
+      internal_port: 80
+      is_main: true
