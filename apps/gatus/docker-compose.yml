@@ -10,5 +10,5 @@ services:
     volumes:
       - ${APP_DATA_DIR}/data/config.yaml:/config/config.yaml
     x-runtipi:
-      internal_port: 80
+      internal_port: 8080
       is_main: true
