@@ -7,14 +7,14 @@
   "port": 18789,
   "categories": ["ai"],
   "description": "OpenClaw is a personal AI assistant you run on your own devices. It answers you on the channels you already use. It can speak and listen on macOS/iOS/Android, and can render a live Canvas you control. The Gateway is just the control plane - the product is the assistant.",
-  "tipi_version": 1,
+  "tipi_version": 2,
   "version": "2026.3.28",
   "source": "https://github.com/openclaw/openclaw",
   "website": "https://openclaw.ai",
   "exposable": true,
   "supported_architectures": ["arm64", "amd64"],
-  "created_at": 1745082405284,
-  "updated_at": 1745082405284,
+  "created_at": 1774902938053,
+  "updated_at": 1774902938053,
   "dynamic_config": true,
   "form_fields": [
     {
