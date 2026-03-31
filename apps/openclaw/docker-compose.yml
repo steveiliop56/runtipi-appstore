@@ -16,7 +16,16 @@ services:
       - ${APP_DATA_DIR}/data:/home/node/.openclaw
     init: true
     command:
-      ["node", "dist/index.js", "gateway", "--bind", "lan", "--port", "18789"]
+      [
+        "node",
+        "dist/index.js",
+        "gateway",
+        "--bind",
+        "lan",
+        "--port",
+        "18789",
+        "--allow-unconfigured",
+      ]
     healthcheck:
       test:
         [
