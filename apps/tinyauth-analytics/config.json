@@ -9,8 +9,8 @@
     "utilities"
   ],
   "description": "A simple server that periodically fetches data from the analytics server API and displays them in a simple dashboard.",
-  "tipi_version": 3,
-  "version": "v1.0.1",
+  "tipi_version": 4,
+  "version": "v1.0.2",
   "source": "https://github.com/steveiliop56/tinyauth-analytics",
   "exposable": true,
   "supported_architectures": [
@@ -18,7 +18,7 @@
     "amd64"
   ],
   "created_at": 1764076646562,
-  "updated_at": 1772842146798,
+  "updated_at": 1775062635999,
   "dynamic_config": true,
   "form_fields": [
     {
