@@ -9,8 +9,8 @@
     "utilities"
   ],
   "description": "Hard Drive S.M.A.R.T Monitoring, Historical Trends & Real World Failure Thresholds.",
-  "tipi_version": 7,
-  "version": "v0.9.0",
+  "tipi_version": 8,
+  "version": "v0.9.1",
   "source": "https://github.com/AnalogJ/scrutiny",
   "exposable": true,
   "supported_architectures": [
@@ -18,7 +18,7 @@
     "amd64"
   ],
   "created_at": 1746960575012,
-  "updated_at": 1776816793837,
+  "updated_at": 1777162544133,
   "dynamic_config": true,
   "form_fields": [],
   "$schema": "https://schemas.runtipi.io/app-info.json"
