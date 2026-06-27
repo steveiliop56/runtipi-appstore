@@ -12,6 +12,7 @@
   "source": "https://github.com/axllent/mailpit",
   "website": "https://mailpit.axllent.org/",
   "exposable": true,
+  "dynamic_config": true,
   "supported_architectures": ["arm64", "amd64"],
   "created_at": 1782558564291,
   "updated_at": 1782558564291,
