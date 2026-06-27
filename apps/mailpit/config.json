@@ -1,0 +1,20 @@
+{
+  "name": "Mailpit",
+  "id": "mailpit",
+  "available": true,
+  "short_desc": "An email and SMTP testing tool with API for developers.",
+  "author": "axllent",
+  "port": 8585,
+  "categories": ["development"],
+  "description": "Mailpit is a small, fast, low memory, zero-dependency, multi-platform email testing tool & API for developers.",
+  "tipi_version": 1,
+  "version": "v1.30.3",
+  "source": "https://github.com/axllent/mailpit",
+  "website": "https://mailpit.axllent.org/",
+  "exposable": true,
+  "supported_architectures": ["arm64", "amd64"],
+  "created_at": 1782558564291,
+  "updated_at": 1782558564291,
+  "form_fields": [],
+  "$schema": "https://schemas.runtipi.io/app-info.json"
+}
