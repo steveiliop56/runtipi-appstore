@@ -1,0 +1,19 @@
+x-runtipi:
+  schema_version: 2
+  overrides: []
+services:
+  ignis:
+    image: nobbe/ignis:0.8.7
+    ports:
+      - ${APP_PORT}:8080
+    environment:
+      - OBSIDIAN_VERSION=1.12.7
+      - PUID=1000
+      - PGID=1000
+    volumes:
+      - ${APP_DATA}/data/vaults:/vaults
+      - ${APP_DATA}/data/ignis:/app/data
+      - ${APP_DATA}/data/obsidian:/app/obsidian-app
+    x-runtipi:
+      is_main: true
+      internal_port: 8080
