@@ -3,7 +3,7 @@
   "services": [
     {
       "name": "prometheus",
-      "image": "prom/prometheus:v3.12.0",
+      "image": "prom/prometheus:v3.13.0",
       "internalPort": 9090,
       "isMain": true,
       "volumes": [
