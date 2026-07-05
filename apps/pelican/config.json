@@ -14,7 +14,7 @@
   "exposable": true,
   "supported_architectures": ["arm64", "amd64"],
   "created_at": 1783255772207,
-  "updated_at": 1783255772207,
+  "updated_at": 1783256327443,
   "dynamic_config": true,
   "form_fields": [
     {
