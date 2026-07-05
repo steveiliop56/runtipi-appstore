@@ -1,0 +1,20 @@
+x-runtipi:
+  schema_version: 2
+services:
+  panel:
+    image: ghcr.io/pelican-dev/panel:1.0.0-beta35
+    volumes:
+      - ${APP_DATA_DIR}/data/pelican:/pelican-data
+      - ${APP_DATA_DIR}/data/logs:/var/www/html/storage/logs
+      - ${APP_DATA_DIR}/data/Caddyfile:/etc/caddy/Caddyfile
+    environment:
+      - XDG_DATA_HOME=/pelican-data
+      - APP_URL=${PELICAN_APP_URL}
+      - ADMIN_EMAIL=${PELICAN_ADMIN_EMAIL}
+      - BEHIND_PROXY=true
+      - TRUSTED_PROXIES=172.18.0.6/16
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    x-runtipi:
+      internal_port: 80
+      is_main: true

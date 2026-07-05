@@ -1,0 +1,34 @@
+{
+  "name": "Pelican",
+  "id": "pelican",
+  "available": true,
+  "short_desc": "Fly High, Game On: Pelican's pledge for unrivaled game servers.",
+  "author": "pelican-dev",
+  "port": 8927,
+  "categories": ["gaming"],
+  "description": "Pelican Panel is a free, open-source game server control panel built for communities, hosts, and self-hosters. It gives users a modern web UI for creating and managing game servers while running each server in an isolated Docker container through Wings.",
+  "tipi_version": 1,
+  "version": "1.0.0-beta35",
+  "source": "https://github.com/pelican-dev/panel",
+  "website": "https://pelican.dev",
+  "exposable": true,
+  "supported_architectures": ["arm64", "amd64"],
+  "created_at": 1783255772207,
+  "updated_at": 1783255772207,
+  "dynamic_config": true,
+  "form_fields": [
+    {
+      "env_variable": "PELICAN_APP_URL",
+      "type": "url",
+      "required": true,
+      "label": "Pelican App URL"
+    },
+    {
+      "env_variable": "PELICAN_ADMIN_EMAIL",
+      "type": "email",
+      "required": true,
+      "label": "Pelican Admin Email"
+    }
+  ],
+  "$schema": "https://schemas.runtipi.io/app-info.json"
+}
