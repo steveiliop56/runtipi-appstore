@@ -3,23 +3,23 @@ x-runtipi:
   overrides: []
 services:
   wings:
-    image: ghcr.io/pterodactyl/wings:v1.13.1
+    image: ghcr.io/pelican-dev/wings:v1.0.0-beta26
     networks:
-      - wing0
+      - wings0
     ports:
       - ${WINGS_SFTP_PORT-:2022}:2022
     environment:
       - TZ=${TZ}
       - WINGS_UID=988
       - WINGS_GID=988
-      - WINGS_USERNAME=pterodactyl
+      - WINGS_USERNAME=pelican
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - /var/lib/docker/containers:/var/lib/docker/containers
-      - /etc/pterodactyl:/etc/pterodactyl
-      - /var/lib/pterodactyl:/var/lib/pterodactyl
-      - /var/log/pterodactyl:/var/log/pterodactyl
-      - /tmp/pterodactyl:/tmp/pterodactyl
+      - /etc/pelican:/etc/pelican
+      - /var/lib/pelican:/var/lib/pelican
+      - /var/log/pelican:/var/log/pelican
+      - /tmp/pelican:/tmp/pelican
       - /etc/ssl/certs:/etc/ssl/certs:ro
       - /run/wings:/run/wings
       - /etc/letsencrypt:/etc/letsencrypt:ro
