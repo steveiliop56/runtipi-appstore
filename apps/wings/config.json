@@ -14,8 +14,18 @@
   "exposable": true,
   "supported_architectures": ["arm64", "amd64"],
   "created_at": 1783255311711,
-  "updated_at": 1783255311711,
+  "updated_at": 1783257029703,
   "dynamic_config": true,
-  "form_fields": [],
+  "form_fields": [
+    {
+      "env_variable": "WINGS_SFTP_PORT",
+      "type": "number",
+      "min": 1024,
+      "max": 65535,
+      "required": false,
+      "default": 2022,
+      "label": "Wings SFTP Port"
+    }
+  ],
   "$schema": "https://schemas.runtipi.io/app-info.json"
 }

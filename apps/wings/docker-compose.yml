@@ -6,6 +6,8 @@ services:
     image: ghcr.io/pterodactyl/wings:v1.13.1
     networks:
       - wing0
+    ports:
+      - ${WINGS_SFTP_PORT-:2022}:2022
     environment:
       - TZ=${TZ}
       - WINGS_UID=988
