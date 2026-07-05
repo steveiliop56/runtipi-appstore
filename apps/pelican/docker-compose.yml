@@ -1,5 +1,6 @@
 x-runtipi:
   schema_version: 2
+  overrides: []
 services:
   panel:
     image: ghcr.io/pelican-dev/panel:1.0.0-beta35
