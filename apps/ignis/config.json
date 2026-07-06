@@ -5,15 +5,20 @@
   "short_desc": "Run Obsidian as a self-hosted web app. Not remote desktop, an actual web app.",
   "author": "Nystik-gh",
   "port": 8287,
-  "categories": ["utilities"],
+  "categories": [
+    "utilities"
+  ],
   "description": "Ignis is a compatibility shim that provides browser-compatible implementations of the Electron APIs used by Obsidian, allowing Obsidian to run in a standard browser while keeping your vault on the server. Obsidian is not included in or distributed with this project.",
-  "tipi_version": 1,
-  "version": "0.8.7",
+  "tipi_version": 2,
+  "version": "0.8.8",
   "source": "https://github.com/Nystik-gh/ignis",
   "exposable": true,
-  "supported_architectures": ["arm64", "amd64"],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
   "created_at": 1782919365379,
-  "updated_at": 1782921638541,
+  "updated_at": 1783303432165,
   "dynamic_config": true,
   "form_fields": [],
   "$schema": "https://schemas.runtipi.io/app-info.json"
