@@ -3,7 +3,7 @@ x-runtipi:
   overrides: []
 services:
   mailpit:
-    image: axllent/mailpit:v1.30.3
+    image: axllent/mailpit:v1.30.4
     volumes:
       - ${APP_DATA_DIR}/data:/data
     ports:
