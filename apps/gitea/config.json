@@ -9,8 +9,8 @@
     "development"
   ],
   "description": "Painless self-hosted all-in-one software development service, including Git hosting, code review, team collaboration, package registry and CI/CD.",
-  "tipi_version": 21,
-  "version": "1.26.4",
+  "tipi_version": 22,
+  "version": "1.27.0",
   "source": "https://github.com/go-gitea/gitea",
   "website": "https://gitea.com",
   "exposable": true,
@@ -19,7 +19,7 @@
     "amd64"
   ],
   "created_at": 1745409407675,
-  "updated_at": 1782088280030,
+  "updated_at": 1784165250350,
   "dynamic_config": true,
   "form_fields": [
     {
