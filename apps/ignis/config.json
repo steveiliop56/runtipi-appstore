@@ -9,8 +9,8 @@
     "utilities"
   ],
   "description": "Ignis is a compatibility shim that provides browser-compatible implementations of the Electron APIs used by Obsidian, allowing Obsidian to run in a standard browser while keeping your vault on the server. Obsidian is not included in or distributed with this project.",
-  "tipi_version": 3,
-  "version": "0.8.9",
+  "tipi_version": 4,
+  "version": "0.8.10",
   "source": "https://github.com/Nystik-gh/ignis",
   "exposable": true,
   "supported_architectures": [
@@ -18,7 +18,7 @@
     "amd64"
   ],
   "created_at": 1782919365379,
-  "updated_at": 1785462391572,
+  "updated_at": 1787358932734,
   "dynamic_config": true,
   "form_fields": [],
   "$schema": "https://schemas.runtipi.io/app-info.json"
