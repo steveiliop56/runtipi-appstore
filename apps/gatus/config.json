@@ -9,8 +9,8 @@
     "utilities"
   ],
   "description": "Gatus is a developer-oriented health dashboard that gives you the ability to monitor your services using HTTP, ICMP, TCP, and even DNS queries as well as evaluate the result of said queries by using a list of conditions on values like the status code, the response time, the certificate expiration, the body and many others.",
-  "tipi_version": 3,
-  "version": "v5.36.0",
+  "tipi_version": 4,
+  "version": "v5.37.0",
   "source": "https://github.com/TwiN/gatus",
   "website": "https://gatus.io",
   "exposable": true,
@@ -19,7 +19,7 @@
     "amd64"
   ],
   "created_at": 1772969142615,
-  "updated_at": 1779496144691,
+  "updated_at": 1790389565827,
   "dynamic_config": true,
   "form_fields": [],
   "min_tipi_version": "v4.7.0",
