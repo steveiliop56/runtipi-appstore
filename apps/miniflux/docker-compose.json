@@ -3,7 +3,7 @@
   "services": [
     {
       "name": "miniflux",
-      "image": "ghcr.io/miniflux/miniflux:2.3.3",
+      "image": "ghcr.io/miniflux/miniflux:2.3.4",
       "internalPort": 8080,
       "isMain": true,
       "environment": [
