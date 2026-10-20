@@ -9,8 +9,8 @@
     "social"
   ],
   "description": "Miniflux is a minimalist and opinionated feed reader. It's simple, fast, lightweight and super easy to install.",
-  "tipi_version": 17,
-  "version": "2.3.3",
+  "tipi_version": 18,
+  "version": "2.3.4",
   "source": "https://github.com/miniflux/v2",
   "website": "https://miniflux.app",
   "exposable": true,
@@ -19,7 +19,7 @@
     "amd64"
   ],
   "created_at": 1745850652498,
-  "updated_at": 1784943019188,
+  "updated_at": 1792463426226,
   "dynamic_config": true,
   "form_fields": [
     {
