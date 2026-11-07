@@ -1,0 +1,54 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "TREK",
+  "id": "trek",
+  "available": true,
+  "short_desc": "Plan trips together, from itineraries to travel journals.",
+  "author": "liketrek",
+  "port": 8055,
+  "uid": 1000,
+  "gid": 1000,
+  "categories": ["utilities"],
+  "description": "TREK is a self-hosted travel planner with real-time collaboration, interactive maps, bookings, budgets, packing lists and travel journals. Plan your trips together and access them on the go with its offline-capable web app.",
+  "tipi_version": 1,
+  "version": "5.1.0",
+  "source": "https://github.com/liketrek/TREK",
+  "website": "https://liketrek.com",
+  "exposable": true,
+  "supported_architectures": ["arm64", "amd64"],
+  "form_fields": [
+    {
+      "type": "email",
+      "label": "Admin email",
+      "hint": "Used to create the admin account on first startup.",
+      "required": true,
+      "env_variable": "TREK_ADMIN_EMAIL"
+    },
+    {
+      "type": "password",
+      "label": "Admin password",
+      "hint": "Used only on first startup. TREK will ask you to change it after signing in.",
+      "required": true,
+      "env_variable": "TREK_ADMIN_PASSWORD"
+    },
+    {
+      "type": "boolean",
+      "label": "Secure cookies",
+      "hint": "Enable when accessing TREK exclusively over HTTPS. Leave disabled for local HTTP access.",
+      "default": false,
+      "env_variable": "TREK_COOKIE_SECURE"
+    },
+    {
+      "type": "random",
+      "label": "Encryption key",
+      "min": 64,
+      "max": 64,
+      "encoding": "hex",
+      "env_variable": "TREK_ENCRYPTION_KEY"
+    }
+  ],
+  "created_at": 1794072081388,
+  "updated_at": 1794072081388,
+  "dynamic_config": true,
+  "min_tipi_version": "4.8.0"
+}

@@ -1,0 +1,19 @@
+services:
+  trek:
+    image: mauriceboe/trek:5.1.0
+    environment:
+      TZ: ${TZ}
+      APP_URL: ${APP_PROTOCOL:-http}://${APP_DOMAIN}
+      ADMIN_EMAIL: ${TREK_ADMIN_EMAIL}
+      ADMIN_PASSWORD: ${TREK_ADMIN_PASSWORD}
+      ENCRYPTION_KEY: ${TREK_ENCRYPTION_KEY}
+      COOKIE_SECURE: ${TREK_COOKIE_SECURE:-false}
+    volumes:
+      - ${APP_DATA_DIR}/data/trek:/app/data
+      - ${APP_DATA_DIR}/data/uploads:/app/uploads
+    x-runtipi:
+      internal_port: 3000
+      is_main: true
+x-runtipi:
+  schema_version: 2
+  overrides: []
