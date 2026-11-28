@@ -12,8 +12,8 @@
     "utilities"
   ],
   "description": "TREK is a self-hosted travel planner with real-time collaboration, interactive maps, bookings, budgets, packing lists and travel journals. Plan your trips together and access them on the go with its offline-capable web app.",
-  "tipi_version": 2,
-  "version": "5.1.4",
+  "tipi_version": 3,
+  "version": "5.2.1",
   "source": "https://github.com/liketrek/TREK",
   "website": "https://liketrek.com",
   "exposable": true,
@@ -53,7 +53,7 @@
     }
   ],
   "created_at": 1794072081388,
-  "updated_at": 1794542360901,
+  "updated_at": 1795843460497,
   "dynamic_config": true,
   "min_tipi_version": "4.8.0"
 }
