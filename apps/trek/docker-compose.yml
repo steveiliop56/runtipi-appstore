@@ -1,6 +1,6 @@
 services:
   trek:
-    image: mauriceboe/trek:5.1.4
+    image: mauriceboe/trek:5.2.1
     environment:
       TZ: ${TZ}
       APP_URL: ${APP_PROTOCOL:-http}://${APP_DOMAIN}
